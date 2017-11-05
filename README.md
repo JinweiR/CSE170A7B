@@ -1,7 +1,11 @@
 **Project:** Gradetime
+
 **Authors:** Oliver Kelton, Jinwei Ren, Jialiang Zhou
+
 **Date:** Nov. 4, 2017
+
 **Description:**
+
 Gradetime is a mobile app that intends to improve communication between parents and educators, for the benefit of their children’s education. The app allows parents to monitor their children’s grades on assignments and tests, ask questions to their teachers, discuss school issues with other parents, and find tutors for their children.
 
 The first page of the app, after login, is index.html. This page contains a list of students the parent has enrolled on the app, as well as an “add student” link that redirects them to a page to add another student to their account. Clicking on any of the students’ names will lead to another page, “features/<student’s name>.html”, which contains information for that individual student.
