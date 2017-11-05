@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="classes_style.css">
+<meta charset="UTF-8">
+<title>Grade Report</title>
+</head>
+
+
+<body style="padding: 20px;">
+<table>
+	<tr>
+	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
+	<th style="text-align: right;">	<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">•••</button>
+  <div id="myDropdown" class="dropdown-content">
+   						<a>Behavior</a>
+						<a>classes</a>
+						<a>College</a>
+						<a>Log out</a>
+  </div>
+</div></th>
+
+</table>
+
+<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
+
+<div class="center" style="font-size: 4em;font-family: Helvetica;">
+	 Grade Detail
+</div>
+
+<center><h1>details of the classes</h1></center>>
+
+<table>
+<tr>
+  <th>Assigments</th>
+  <th>Score</th>
+</tr>
+
+<tr>
+  <td><a href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">Assigment 1</a></td>
+  <td>100%</td>
+</tr>
+
+<tr>
+<td><a href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">midterm 1</a></td>
+<td>88%</td>
+</tr>
+</table>
+</body>
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</html>
+
+
+
+
+
+
+

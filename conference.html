@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Conference Center || Gradetime</title>
+		<meta property="id" value="conference"/>
+		<meta lang="en"/>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/conferenceStyle.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/navbar.js"></script>
+		<script src="./js/advisingScript.js"></script>
+		<script src="./js/link.js"></script>
+		<script src="./js/handlebars-v4.0.11.js"></script>
+		<script src="./js/studentScript.js"></script>
+	</head>
+	<body>
+		<div id="navbar">
+			<table id="head-table">
+				<tr>
+					<td id="td-left">
+						<a href="./features.html">Home</a>
+					</td>
+					<td id="td-mid">
+						<p id="select-header">Different Page</p>
+						<div id="main-menu" class="dropdown">
+							<div id="main-select" class="selector">
+								<p class="select-txt">Conference Center</p>
+								<img class="select-icon" src="./images-icons/select-arrows.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="grade.html">
+									Grades
+								</div>
+								<div class="drop-option link" href="parent_forum.html">
+									Parent Forum
+								</div>
+								<div class="drop-option link" href="find_tutor.html">
+									Find Tutor
+								</div>
+							</div>
+						</div>
+					</td>
+					<td id="td-right">
+						<div id="settings" class="dropdown">
+							<div class="selector">
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./index.html">Different Student</div>
+								<div class="drop-option link" href="./login.html">Logout</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="shadow"></div>
+		</div>
+		<div id="main">
+			<div id="feedback">
+				<h3 id="feedback-header">Latest feedback on </h3>
+				<!------------template starts here------------>
+				<script id="template-1" type="text/x-handlebars-template">
+					<div class="feedback-post" value="0">
+						<div class="status {{status}}-status"></div>
+						<p class="feedback-post">{{class}}: {{msg}}</p>
+					</div>
+				</script>
+				<div id="feedback-posts">
+					<!------------feedback posts go here-------------->
+				</div>
+			</div>
+			<div class="see-more">
+				<p id="see-more-button">See More</p>
+			</div>
+			<hr/>
+			<form id="main-form">
+				<p class="advising_1">Ask a question to:</p>
+				<input id="category" name="category" value="none"/>
+				<div class="dropdown-categories">
+					<div id="select" name="category">
+						<p class="select-txt">Select Teacher</p>
+						<img class="select-icon" src="./images-icons/select-arrows.png"/>
+					</div>
+					<!-----------Template 2 goes here--------------->
+					<script id="template-2" type="text/x-handlebars-template">
+						 <div class="dropdown-option">{{teacher}} || {{name}}</div>
+					</script>
+					<div id="dropdown-content" class="dropdown-content">
+						<!------------classes and teachers go here------------->
+					</div>
+				</div>
+				<div id="subject-div">
+					<input id="subject" name="subject" type="text" placeholder="Subject"/>
+				</div>
+				<p class="advising_1">Please describe your problem:</p>
+				<textarea id="problem" name="problem" class="text_1" rows="15" wrap="soft" placeholder="Question"></textarea>
+				<br/>
+				<input id="notification-input" name="notification-type" value="none"/>
+				<br/>
+				<div id="notifications">
+					<p>Receive response notification by:</p>
+					<div id="email" class="notif unselected">
+						<p>Email</p>
+					</div>
+					<div id="text" class="notif unselected">
+						<p>Text</p>
+					</div>
+				</div>
+				<br/>
+				<div id="submit-div">
+					<div id="submit">Submit</div>
+				</div>
+			</form>
+			<hr/>
+			<h3>Teacher Responses:</h3>
+			<a href="./teacherMessage.html">
+				<div class="response-msg">
+					<p>RE: Regrading homework 2</p>
+				</div>
+			</a>
+			<a href="./teacherMessage.html">
+				<div class="response-msg">
+					<p>RE: Doctor's appointment tomorrow</p>
+				</div>
+			</a>
+		</div>
+		<footer>
+			<hr/>
+		</footer>
+	</body>
+</html>

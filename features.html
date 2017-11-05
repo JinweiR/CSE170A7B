@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Features || Gradetime</title>
+		<meta property="id" value="features"/>
+		<meta lang="en"/>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/navbar.js"></script>
+		<script src="./js/link.js"></script>
+		<script src="./js/handlebars-v4.0.11.js"></script>
+		<script src="./js/studentScript.js"></script>
+	</head>
+	<body>
+		<div id="navbar">
+			<table id="head-table">
+				<tr>
+					<td id="td-left">
+						<a href="./index.html">Home</a>
+					</td>
+					<td id="td-mid">
+						<p id="select-header">Current Student</p>
+						<!-----------template here----------->
+						<script id="template-1" type="text/x-handlebars-template">
+							<div class="drop-option student-option" value="{{index}}">
+								{{first-name}}
+							</div>
+						</script>
+						<div id="main-menu" class="dropdown">
+							<div id="main-select" class="selector">
+								<p class="select-txt" id="student-name">Student</p>
+								<img class="select-icon" src="./images-icons/select-arrows.png"/>
+							</div>
+							<div class="drop-menu" id="drop-menu">
+								<!-----------other students go here--------------->
+							</div>
+						</div>
+					</td>
+					<td id="td-right">
+						<div id="settings" class="dropdown">
+							<div class="selector">
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./login.html">Logout</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="shadow"></div>
+		</div>
+		<div id="main">
+			<div class="center-menu">
+				<div class="center-option">
+					<p class="center-txt link" href="./conference.html">Conference Center</p>
+				</div>
+				<div class="center-option link" href="./grade.html">
+					<p class="center-txt">Grades</p>
+				</div>
+				<div class="center-option link" href="./parent_forum.html">
+					<p class="center-txt">Parent Forum</p>
+				</div>
+				<div class="center-option link" href="./find_tutor.html">
+					<p class="center-txt">Find a Tutor</p>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<hr/>
+		</footer>
+	</body>
+</html>

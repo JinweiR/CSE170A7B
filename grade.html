@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="classes_style.css">
+<meta charset="UTF-8">
+<title>Grade Report</title>
+</head>
+
+
+<body style="padding: 20px;">
+
+<table>
+	<tr>
+	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
+	<th style="text-align: right;">	<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">•••</button>
+  <div id="myDropdown" class="dropdown-content">
+   					<a href="./setting.html">Change setting</a>
+						<a href="./change_child.html">Different Student</a>
+						<a href="logout.html">Log out</a>
+  </div>
+</div></th>
+
+</table>
+<br>
+<center>
+<fieldset >
+<div style="border:1px black;width:100%;">
+ <select name=countries style="width:100%;">
+ <option selected="selected"><center>Jenny</center></option>
+  <option value=gs><center>Amy</center></option>
+  <option value=gs><center>John</center></option>
+  <option value=gs><center>Kyle</center></option>
+ </select>
+ </div>
+</fieldset>
+</center>
+
+<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
+
+<div class="center" style="font-size: 4em;font-family: Helvetica;">
+	 <b>Classes</b><br>
+	 <center style="font-size: 0.5em;">Fall 2017<br>
+	 Over all GPA: 3.99</center>
+</div>
+<br>
+
+<table>
+<tr>
+
+<th><div class="center classBlock">
+<a href="gradeDetail.html">AP Calculus</a>
+</div>
+</th>
+</tr>
+
+<tr>
+<th><div class="center classBlock">
+<a href="gradeDetail.html"> AP Physics</a>
+</div>
+</th>
+</tr>
+
+<tr>
+<th><div class="center classBlock">
+<a href="gradeDetail.html">AP Com Sci</a>
+</div>
+</th>
+</tr>
+
+<tr>
+<th><div class="center classBlock">
+<a href="gradeDetail.html">AP English</a>
+</div>
+</th>
+</tr>
+
+</div>
+
+</body>
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</html>
+
+
+
+
+
+
+

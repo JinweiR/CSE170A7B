@@ -1,0 +1,245 @@
+h3 {
+	text-align: center;
+	margin: 0px;
+	padding: 2px;
+	font-family: "Georgia", Times, serif;
+	font-size: 42px;
+	font-weight: 600;
+}
+input[type='text'] {
+	height: 32px;
+	font-size: 28px;
+	text-indent: 5px;
+	margin-bottom: 10px;
+}
+input[type="checkbox"] {
+	width: 20px;
+}
+#category {
+	display: none;
+}
+button {
+	height: 40px;
+	background-color: #FFFFFF;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	font-size: 16px;
+	text-align: center;
+}
+button.home {
+	width: 80px;
+}
+#custom-cat-holder {
+	display: none;
+	text-align: center;
+	margin: auto;
+	margin-top: 15px;
+}
+#custom-category {
+	font-size: 20px;
+	width: 250px;
+	height: 25px;
+}
+#feedback-posts {
+	display: block;
+	height: 228px;
+	overflow: hidden;
+}
+div.feedback-post {
+	height: 66px;
+	vertical-align: top;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-bottom: 1px #999999 solid;
+	overflow: hidden;
+	font-size: 14px;
+	padding: 4px;
+	cursor: pointer;
+}
+p.feedback-post {
+	display: inline;
+	word-break: break-word;
+}
+img.feedback-icon {
+	display: inline;
+	margin-left: 2px;
+	margin-right: 6px;
+	height: 36px;
+}
+div.see-more {
+	position: relative;
+	width: 90%;
+	margin: auto;
+	background-color: #FFFFFF;
+	text-align: center;
+	font-weight: 600;
+	cursor: pointer;
+}
+#see-more-button {
+	font-size: 42px;
+	padding: 5px;
+}
+p.advising_1 {
+	text-align: center;
+}
+div.advising_1 {
+	text-align: center;
+}
+div.dropdown-categories {
+	position: relative;
+	text-align: center;
+	margin: auto;
+	min-width: 200px;
+	width: 80%;
+}
+div.dropdown-content {
+	display: none;
+	min-width: 200px;
+	width: 100%;
+	margin: auto;
+	position: absolute;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+	margin-bottom: 5px;
+}
+div.dropped {
+	display: block;
+    background: solid;
+}
+div.dropdown-option {
+	text-align: center;
+	padding: 5px;
+	height: 68px;
+	overflow: hidden;
+	border: none;
+	border-bottom: 1px #999999 solid;
+}
+div.dropdown-option:hover {
+	cursor: pointer;
+	background-color: #66A9F6;
+}
+#select {
+	min-width: 200px;
+	padding: 5px;
+	height: 68px;
+	margin: auto;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	font-size: 32px;
+	font-weight: 300;
+	overflow: hidden;
+	p {
+		font-size: 36px;
+	}
+}
+#select:hover {
+	cursor: pointer;
+}
+#subject {
+	font-size: 58px;
+	font-weight: 200;
+	height: auto;
+	text-align: center;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+#subject-div {
+	margin-top: 10px;
+	text-align: center;
+}
+table {
+	width: 90%;
+	vertical-align: top;
+}
+button:hover {
+	background-color: #BBBBBB;
+}
+.text_1 {
+	margin-left: 10%;
+	width: 80%;
+	height: 400px;
+	text-indent: 10px;
+	font-size: 48px;
+	font-weight: 400;
+	resize: none;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+}
+#submitter {
+	text-align: center;
+}
+#submit-div {
+	text-align: center;
+	margin: auto;
+}
+#submit {
+	margin: auto;
+	width: 260px;
+	height: auto;
+	font-size: 58px;
+	font-weight: 600;
+	background-color: #666666;
+	background: -webkit-radial-gradient(#666666,#777777);
+	border-radius: 8px;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+div.response-msg {
+	height: auto;
+	margin-left: 20px;
+	margin-right: 20px;
+	overflow: hidden;
+	border-top: 1px #999999 solid;
+	border-bottom: 1px #999999 solid;
+	text-indent: 5px;
+}
+#notifications {
+	text-align: center;
+	margin: auto;
+	margin-bottom: 10px;
+}
+.notif {
+	display: inline-block;
+	padding: 10px;
+	width: 200px;
+	height: auto;
+	margin: 5px;
+	font-size: 52px;
+	font-weight: 600;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.selected {
+	background-color: #0000FF;
+	color: #FFFFFF;
+}
+.unselected {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+#notification-input {
+	display: none;
+}
+div.status {
+	display: inline-block;
+	margin-left: 2px;
+	margin-right: 6px;
+	height: 36px;
+}
+div.good-status {
+	background-image: url("../images-icons/Star.png");
+	background-size: 36px 36px;
+	width: 36px;
+}
+div.bad-status {
+	background-image: url("../images-icons/Exclamation.png");
+	background-size: 9px 36px;
+	width: 9px;
+	margin-left: 15px;
+	margin-right: 15px;
+}

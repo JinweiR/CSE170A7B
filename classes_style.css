@@ -1,0 +1,104 @@
+.center {
+    text-align: center;
+    margin-top:20px;
+}
+
+select {
+    display: inline-block;
+    width: 100%;
+    max-width:90%;
+    font-size: 34px;
+    text-align: center;
+}
+
+/*drop down menue and content*/
+.dropbtn {
+    padding: 16px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width:300%;
+    overflow: auto;
+    right: 0;
+    z-index: 1;
+        text-align: center;
+
+}
+
+.dropdown-content a {
+    color: black;
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: solid line black;
+
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+a {
+    text-decoration: none !important;
+    text-decoration-color: black;
+}
+/***************************/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+td, th {
+    text-align: center;
+    padding: 8px;
+    font-size: 3em;
+    border-bottom: 1px solid black
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+	.classBlock{
+	padding: 10px;
+	font-size: 2em;
+	width: 100%;
+
+	}
+
+
+}
+
+@media only screen  and (min-width : 1224px){
+	.classBlock{
+		padding: 10px;
+		width:100%;
+		font-size: 4em;
+		background-color: #dddddd
+	}
+	.classBlock:hover{
+		background-color: #f2f2f2;
+		font-size: 3.4em;
+	}
+}
+
+.classBlock:hover{
+	background-color: #f2f2f2;
+}
+
