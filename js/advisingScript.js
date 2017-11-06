@@ -45,7 +45,6 @@ var main = function () {
 	}
 	
 	function showLess() {
-		//$('#feedback-posts').height('90px');
 		$('#feedback-posts').css('height',feedbackHeight);
 		$('#see-more-button').text('See More');
 		$('#feedback-posts').removeClass('show-more');
@@ -84,7 +83,6 @@ var main = function () {
 	/*Toggle feedback post expanded/contracted*/
 	$(document).on('click','.feedback-post',function() {
 		if ($(this).hasClass('expanded')) {
-			//alert(postHeight);
 			$(this).height($(this).attr('value'));
 			$(this).removeClass('expanded');
 		} else {

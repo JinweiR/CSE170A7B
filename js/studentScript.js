@@ -6,7 +6,7 @@
  * Requires handlebars.js
  * 
  * IMPORTANT -- Protocol for creating/adding html pages:
- * 1. add the tag <meta property="id" value="<page identifier>"> to the head of the html doc
+ * 1. add the tag <meta id="pageId" value="<page identifier>"> to the head of the html doc
  * 2. in this script, in var main, create var <page identifier>_script = function() {code to execute for page}
  * 3. in the switch statement at the end of var main, add the following:
  * 	 case <page identifier>:
@@ -175,7 +175,7 @@ var conference_script = function() {
 //this is the code that will execute when the page is loaded
 var main = function() {
 	/*choose which script to execute, based on the page*/
-	var currPage = $('meta[property="id"]').attr('value');
+	var currPage = $('#pageId').attr('value');
 	//alert(currPage);//tester
 	
 	switch(currPage) {
