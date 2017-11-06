@@ -92,12 +92,12 @@ var index_script = function() {
 		var source = $('#student-template').html();
 		var template = Handlebars.compile(source);
 	
-		var destination = $('#center-menu');
+		var destination = $('#students');
 	
 		for (var i = 0; i < data.length; i++) {
 			var currData = data[i];
 			var currHtml = template(currData);
-			destination.prepend(currHtml);
+			destination.append(currHtml);
 		}//end for loop i
 	
 		//set current student when the user clicks on a student
