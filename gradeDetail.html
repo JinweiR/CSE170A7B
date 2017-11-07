@@ -1,52 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="classes_style.css">
-<meta charset="UTF-8">
-<title>Grade Report</title>
+	<title>Assignment Reports || Gradetime</title>
+	<meta lang="en"/>
+	<meta charset="UTF-8"/>
+	<meta id="pageId" value="assignments">
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	<!link rel="stylesheet" type="text/css" href="classes_style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/handlebars-v4.0.11.js"></script>
+	<script src="./js/studentScript.js"></script>
+	<script src="./js/link.js"></script>
+	<script src="./js/navbar.js"></script>s
 </head>
 
-
-<body style="padding: 20px;">
-<table>
-	<tr>
-	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
-	<th style="text-align: right;">	<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">•••</button>
-  <div id="myDropdown" class="dropdown-content">
-   						<a>Behavior</a>
-						<a>classes</a>
-						<a>College</a>
-						<a>Log out</a>
-  </div>
-</div></th>
-
-</table>
-
-<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
-
-<div class="center" style="font-size: 4em;font-family: Helvetica;">
-	 Grade Detail
-</div>
-
-<center><h1>details of the classes</h1></center>>
-
-<table>
-<tr>
-  <th>Assigments</th>
-  <th>Score</th>
-</tr>
-
-<tr>
-  <td><a href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">Assigment 1</a></td>
-  <td>100%</td>
-</tr>
-
-<tr>
-<td><a href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">midterm 1</a></td>
-<td>88%</td>
-</tr>
-</table>
+<body>
+	<div id="navbar">
+		<table id="head-table">
+			<tr>
+				<td id="td-left">
+					<a href="./grade.html">Back</a>
+				</td>
+				<td id="td-mid">
+					<p id="select-header">Different Page</p>
+					<div id="main-menu" class="dropdown">
+						<div id="main-select" class="selector">
+							<p class="select-txt">Grades</p>
+							<img class="select-icon" src="./images-icons/select-arrows.png"/>
+						</div>
+						<div class="drop-menu">
+							<div class="drop-option link" href="conference.html">
+								Conference Center
+							</div>
+							<div class="drop-option link" href="parent_forum.html">
+								Parent Forum
+							</div>
+							<div class="drop-option link" href="find_tutor.html">
+								Find Tutor
+							</div>
+						</div>
+					</div>
+				</td>
+				<td id="td-right">
+					<div id="settings" class="dropdown">
+						<div class="selector">
+							<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+						</div>
+						<div class="drop-menu">
+							<div class="drop-option link" href="./setting.html">Change Settings</div>
+							<div class="drop-option link" href="./index.html">Different Student</div>
+							<div class="drop-option link" href="./login.html">Logout</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div id="shadow"></div>
+	</div>
+	<div id="main">
+		<h1 id="class-name">Assignments</h1>
+		<div id="center-table-div">
+			<table id="center-table">
+				<tr>
+  					<th>Name</th>
+  					<th>Score</th>
+				</tr>
+				<!--------Template 1 goes here------------->
+				<script id="template-1" type="text/x-handlebars-template">
+					<tr>
+ 						<td class="link" href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">{{name}}</td>
+ 						<td>{{grade}}%</td>
+					</tr>
+				</script>
+			</table>
+		</div>
+	</div>
 </body>
 
 

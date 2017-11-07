@@ -49,6 +49,16 @@ button.info {
 	border-radius: 10px;
 	cursor: pointer;
 }
+div.submit-button {
+	text-align: center;
+	height: 60px;
+	width: 280px;
+	font-family: "Helvetica Neue", Arial;
+	font-size: 45px;
+	font-weight: 500;
+	border-radius: 10px;
+	cursor: pointer;
+}
 #loginDiv {
 	text-align: center;
 }

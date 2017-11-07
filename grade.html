@@ -1,82 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="classes_style.css">
-<meta charset="UTF-8">
-<title>Grade Report</title>
+	<title>Report Card || Gradetime</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<!----link rel="stylesheet" type="text/css" href="classes_style.css"--->
+	<meta charset="UTF-8"/>
+	<meta id="pageId" value="grades"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/handlebars-v4.0.11.js"></script>
+	<script src="./js/studentScript.js"></script>
+	<script src="./js/link.js"></script>
+	<script src="./js/navbar.js"></script>
 </head>
 
 
-<body style="padding: 20px;">
-
-<table>
-	<tr>
-	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
-	<th style="text-align: right;">	<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">•••</button>
-  <div id="myDropdown" class="dropdown-content">
-   					<a href="./setting.html">Change setting</a>
-						<a href="./change_child.html">Different Student</a>
-						<a href="logout.html">Log out</a>
-  </div>
-</div></th>
-
-</table>
-<br>
-<center>
-<fieldset >
-<div style="border:1px black;width:100%;">
- <select name=countries style="width:100%;">
- <option selected="selected"><center>Jenny</center></option>
-  <option value=gs><center>Amy</center></option>
-  <option value=gs><center>John</center></option>
-  <option value=gs><center>Kyle</center></option>
- </select>
- </div>
-</fieldset>
-</center>
-
-<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
-
-<div class="center" style="font-size: 4em;font-family: Helvetica;">
-	 <b>Classes</b><br>
-	 <center style="font-size: 0.5em;">Fall 2017<br>
-	 Over all GPA: 3.99</center>
-</div>
-<br>
-
-<table>
-<tr>
-
-<th><div class="center classBlock">
-<a href="gradeDetail.html">AP Calculus</a>
-</div>
-</th>
-</tr>
-
-<tr>
-<th><div class="center classBlock">
-<a href="gradeDetail.html"> AP Physics</a>
-</div>
-</th>
-</tr>
-
-<tr>
-<th><div class="center classBlock">
-<a href="gradeDetail.html">AP Com Sci</a>
-</div>
-</th>
-</tr>
-
-<tr>
-<th><div class="center classBlock">
-<a href="gradeDetail.html">AP English</a>
-</div>
-</th>
-</tr>
-
-</div>
-
+<body>
+<!----------------------Navbar------------------>
+<div id="navbar">
+			<table id="head-table">
+				<tr>
+					<td id="td-left">
+						<a href="./features.html">Home</a>
+					</td>
+					<td id="td-mid">
+						<p id="select-header">Different Page</p>
+						<div id="main-menu" class="dropdown">
+							<div id="main-select" class="selector">
+								<p class="select-txt">Grades</p>
+								<img class="select-icon" src="./images-icons/select-arrows.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="conference.html">
+									Conference Center
+								</div>
+								<div class="drop-option link" href="parent_forum.html">
+									Parent Forum
+								</div>
+								<div class="drop-option link" href="find_tutor.html">
+									Find Tutor
+								</div>
+							</div>
+						</div>
+					</td>
+					<td id="td-right">
+						<div id="settings" class="dropdown">
+							<div class="selector">
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./index.html">Different Student</div>
+								<div class="drop-option link" href="./login.html">Logout</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="shadow"></div>
+		</div>
+		
+	<div id="main">
+		<!------------Student Name and GPA--------------->
+		<div id="description" class="center">
+	 		<h1 id="student-name">Classes</h1>
+	 		<h2 id="student-gpa">Cumulative GPA:</h2>
+		</div>
+		<!--------------Central menu containing each class--------------->
+		<div class="center-menu" id="class-list">
+			<!-----------Template for handlebars------------>
+			<script id="template-1" type="text/x-handlebars-template">
+				<div class="center-option link" href="gradeDetail.html" value="toSet">
+					<p class="center-txt">{{name}}</p>
+				</div>
+			</script>
+		</div>
+	</div>
 </body>
 
 

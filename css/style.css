@@ -6,6 +6,18 @@ body {
 	font-size: 52px;
 	padding: 5px;
 }
+h1 {
+	font-family: "Georgia", Times, serif;
+	font-size: 1.5em;
+	text-align: center;
+	margin: 10px;
+}
+h2 {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size: 1em;
+	text-align: center;
+	margin: 10px;
+}
 p {
 	margin: 4px;
 	font-size: 52px;
@@ -163,7 +175,19 @@ img.arrow-icon {
 	min-height: 50px;
 	height: 50%;
 }
-
+#center-table-div {
+	text-align: center;
+}
+#center-table {
+	margin: auto;
+	width: 80%;
+	text-align: center;
+}
+#center-table td {
+	width: 50%;
+	border-bottom: 1px #999999 solid;
+	padding: 10px;
+}
 footer {
 	bottom: 0px;
 	height: 10px;

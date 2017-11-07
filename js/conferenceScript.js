@@ -1,3 +1,28 @@
+/**
+ * displays all feedback posts (<div class="feedback-post">). Changes all posts'
+ * style to "display: block"
+ * @param None
+ * @return None
+ */
+function show_feedback() {
+	$('div.feedback-post').css('display','block');
+};//end function show_feedback
+
+/**
+ * hides all feedback posts ('div.feedback-post') beyond a certain number.
+ * @param showNum == number of posts to show after hiding other posts
+ * @return None
+ */
+function hide_feedback(showNum) {
+	if (showNum < 0) showNum *= -1;
+	var posts = $('body').find('div.feedback-post');
+	for (var i = 0; i < posts.length; i++) {
+		if (i > showNum - 1) $(posts[i]).css('display','none');
+	}//end for loop i
+};//end function hide_feedback
+
+var hideFeedback = hide_feedback(3);
+
 var main = function () {
 	var slideSpeed = 200;
 	var dropped = false;
@@ -9,6 +34,22 @@ var main = function () {
 	var alert1 = "Please choose a category for your question.\n";
 	var alert2 = "Please enter your comment in the text area.\n";
 	var alert3 = "Please leave your phone number or email address.";
+	
+	$(document).ready(function() {
+		hide_feedback(3);
+	});
+	
+	$(document).on('click','#see-more-button',function() {
+		if ($('#feedback-posts').hasClass('expanded')) {
+			hide_feedback(3);
+			$('#see-more-button').text('See More');
+			$('#feedback-posts').removeClass('expanded');
+		} else {
+			show_feedback();
+			$('#see-more-button').text('See Less');
+			$('#feedback-posts').addClass('expanded');
+		}
+	});
 	
 	//select item from dropdown menu
 	$(document).on('click','#select',function() {
@@ -49,14 +90,14 @@ var main = function () {
 		$('#see-more-button').text('See More');
 		$('#feedback-posts').removeClass('show-more');
 	}
-	
+	/* REDUNDANT
 	$(document).on('click','#see-more-button',function() {
 		if ($('#feedback-posts').hasClass('show-more')) {
 			showLess();
 		}
 		else showMore();
 	});
-	
+	*/
 	//slideUp from wherever
 	$(document).on('click','body',function() {
 		if (dropped) {

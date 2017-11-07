@@ -42,7 +42,7 @@ button.home {
 }
 #feedback-posts {
 	display: block;
-	height: 228px;
+	height: auto;
 	overflow: hidden;
 }
 div.feedback-post {

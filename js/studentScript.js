@@ -7,7 +7,7 @@
  * 
  * IMPORTANT -- Protocol for creating/adding html pages:
  * 1. add the tag <meta id="pageId" value="<page identifier>"> to the head of the html doc
- * 2. in this script, in var main, create var <page identifier>_script = function() {code to execute for page}
+ * 2. in this script, create var <page identifier>_script = function() {code to execute for page}
  * 3. in the switch statement at the end of var main, add the following:
  * 	 case <page identifier>:
  * 		$(document).ready(<page identifier>_script);
@@ -24,20 +24,39 @@
 		var item = currData['item'];
  */
 
+/**
+ * replaces value of key 'on' in 'subject' with value in 'source' with key
+ * equivalent to original value of 'on'
+ * @param Hashmap subject: Hashmap containing key 'on'
+ * @param Hashmap source: Hashmap from which replacement values are drawn
+ * @param string on: key value on which to merge Hashmaps
+ * @return Hashmap with merged data
+ */
+function joinMaps(subject, source, on) {
+	var output = {};//Hashmap to return
+	var keys = subject.keys();
+	var values = subject.values();
+	for (var i = 0; i < keys.length; i++) {
+		if (keys[i] == on) output[keys[i]] = source[values[i]];
+		else output[keys[i]] = values[i];
+	}//end for loop i
+	return output;
+};
+
 //contains student first name, last name, and index number
 //index begins at zero
 var data = [
-	{'index': '0', 'first-name': 'Julian', 'last-name':'Jones'},
-	{'index': '1', 'first-name': 'Emily', 'last-name':'Jones'},
-	{'index': '2', 'first-name': 'Edward', 'last-name':'Jones'},
-	{'index': '3', 'first-name': 'Alice', 'last-name':'Jones'}
+	{'index': '0', 'first-name': 'Julian', 'last-name':'Jones', 'gpa': '3.89'},
+	{'index': '1', 'first-name': 'Emily', 'last-name':'Jones', 'gpa': '3.94'},
+	{'index': '2', 'first-name': 'Edward', 'last-name':'Jones', 'gpa': '3.91'},
+	{'index': '3', 'first-name': 'Alice', 'last-name':'Jones', 'gpa': '3.87'}
 ];
 
 //contains teachers' feedback on students
 //fields: class, date, msg, status(good/bad)
 //stored as a hashmap so data can be referenced using 'curr-student'
 var feedback = {
-	'0' : [{'class': 'Spanish', 'status': 'good', 'date': '11-3-2017', 'msg': 'Great job on the skit!'},
+	'0' : [{'class': 'SPAN_4', 'status': 'good', 'date': '11-3-2017', 'msg': 'Great job on the skit!'},
 		{'class': 'Calculus', 'status': 'bad', 'date': '10-31-2017', 'msg': 'Not spooky enough 4me'},
 		{'class': 'Biology', 'status': 'bad', 'date': '10-27-2017', 'msg': 'Don\'t play with bunsen burners.'},
 		{'class': 'Spanish', 'status': 'good', 'date': '', 'msg': 'Muy bien!'}
@@ -84,6 +103,47 @@ var ref = {
 	'1' : data[1],
 	'2' : data[2],
 	'3' : data[3]
+};
+/**
+ * assignment arrays store assignments for each student, indexed by student number (see 'ref')
+ */
+var assignments0 = [
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88'}
+];
+var assignments1 = [
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94'}
+];
+var assignments2 = [
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88'}
+];
+var assignments3 = [
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94'}
+];
+var assignmentsRef = {
+	'0': assignments0,
+	'1': assignments1,
+	'2': assignments2,
+	'3': assignments3,
 };
 
 //scripts for each page
@@ -142,7 +202,13 @@ var conference_script = function() {
 		var header = $('#feedback-header').text();
 		header += name + ":";
 		$('#feedback-header').text(header);
-		
+		/*
+		//test joinMaps
+		var testFeedback = feedback['0'];
+		var testData = joinMaps(testFeedback[0], classes, 'class');
+		var testItem = testData['class'];
+		alert(testItem.toString());//tester
+		*/
 		//fill in feedback
 		var destination = $('#feedback-posts');
 		var feedbackData = feedback[currStudent];
@@ -170,8 +236,61 @@ var conference_script = function() {
 			destination.append(currHtml);
 		}//end for loop j
 	};//end var conference_script
-
-
+var grade_script = function() {
+	var currIndex = localStorage.getItem('curr-student');
+	var currStudent = ref[currIndex];
+	var studentName = currStudent['first-name'];
+	var studentGPA = currStudent['gpa'];
+	
+	$('#student-name').text(studentName + "'s Classes:");
+	$('#student-gpa').text("Cumulative GPA: " + studentGPA);
+	
+	/*Create list of classes*/
+	var destination = $('#class-list');
+	var source = $('#template-1').html();
+	var template = Handlebars.compile(source);
+	var studentClasses = classList[currIndex];
+	
+	for (var i = 0; i < studentClasses.length; i++) {
+		var currKey = studentClasses[i];
+		var currClass = classes[currKey];
+		var currHtml = template(currClass);
+		destination.append(currHtml);
+	}//end for loop i
+	
+	/*apply class code to each class-option div as value attribute*/
+	var options = $('body').find('.center-option');//List of .center-option elements
+	for (var j = 0; j < options.length; j++) {
+		var code = studentClasses[j];
+		$(options[j]).attr('value',code);
+	}//end for loop j
+	
+	/*change value of curr-class item in localStorage*/
+	$(document).on('click','.center-option',function() {
+		var value = $(this).attr('value');
+		localStorage.setItem('curr-class',value);
+	});
+};//end grade_script
+var assignments_script = function() {
+	var currStudent = localStorage.getItem('curr-student');
+	var currIndex = localStorage.getItem('curr-class');
+	var currClass = classes[currIndex];
+	var className = currClass['name'];
+	$('#class-name').text(className + " Assignments");
+	
+	/*Insert assignments into table*/
+	var destination = $('#center-table');
+	var source = $('#template-1').html();
+	var template = Handlebars.compile(source);
+	var assignmentList = assignmentsRef[currStudent];
+	for (var i = 0; i < assignmentList.length; i++) {
+		var currAssgn = assignmentList[i];
+		if (currAssgn['class'] == currIndex) {
+			var currHtml = template(currAssgn);
+			destination.append(currHtml);
+		}
+	}//end for loop i
+};
 //this is the code that will execute when the page is loaded
 var main = function() {
 	/*choose which script to execute, based on the page*/
@@ -187,6 +306,12 @@ var main = function() {
 			break;
 		case 'conference':
 			$(document).ready(conference_script);
+			break;
+		case 'grades':
+			$(document).ready(grade_script);
+			break;
+		case 'assignments':
+			$(document).ready(assignments_script);
 			break;
 	}//end switch
 };//end var main
