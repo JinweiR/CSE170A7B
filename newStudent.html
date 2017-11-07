@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Your Students || Gradetime</title>
-		<meta id="pageId" value="students"/>
+		<title>[Page Name Here] || Gradetime</title>
+		<meta id="pageId" value="[pageId Here]"/>
 		<meta lang="en"/>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="./js/navbar.js"></script>
 		<script src="./js/link.js"></script>
 		<script src="./js/handlebars-v4.0.11.js"></script>
 		<script src="./js/studentScript.js"></script>
+		<script src="./js/navbar.js"></script>
 	</head>
 	<body>
+		<!--------------fixed navbar on top: REPLACE [PAGE NAME HERE]----------->
 		<div id="navbar">
 			<table id="head-table">
 				<tr>
 					<td id="td-left">
+						<a href="./index.html">Back</a>
 					</td>
 					<td id="td-mid">
-						<p id="select-header">Welcome!</p>
 						<div>
-							Select a Student
+							Add Student
 						</div>
 					</td>
 					<td id="td-right">
@@ -31,6 +32,7 @@
 							</div>
 							<div class="drop-menu">
 								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./index.html">Different Student</div>
 								<div class="drop-option link" href="./login.html">Logout</div>
 							</div>
 						</div>
@@ -40,22 +42,15 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			<script id="student-template" type="text/x-handlebars-template">
-				<a href="./features.html">
-				<div class="center-option student" value="{{index}}">
-					<p class="center-txt">{{first-name}}</p>
-				</div>
-				</a>
-			</script>
-			<div class="center-menu">
-				<div id="students">
-					<!---------list of students goes here-------->
-				</div>
-				<div class="center-option link" href="./newStudent.html">
-					<p class="center-txt">Add Student</p>
-					<img class="arrow-icon" src="./images-icons/Add Sign.png"/>
-				</div>
-			</div>
+			<!-----main content goes here------------>
+			<form class="main-form">
+				<h1>Add a New Student</h1>
+				<input class="solo-input" id="first-name" type="text" placeholder="First Name"/>
+				<input class="solo-input" id="last-name" type="text" placeholder="Last Name"/>
+				<input class="solo-input" id="student-id" type="text" placeholder="Student ID Num (A00000000)"/>
+				<input class="solo-input" id="school-name" type="text" placeholder="School Name"/>
+				<div id="submit">Submit</div>
+			</form>
 		</div>
 		<footer>
 			<hr/>
