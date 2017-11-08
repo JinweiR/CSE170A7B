@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="classes_style.css">
-<meta charset="UTF-8">
-<script src="./js/tutors.js"></script>
-<title>Grade Report</title>
-</head>
+	<head>
+		<title>Find Tutor || Gradetime</title>
+		<!---TODO: put stylesheet in "css" folder, make consistent with "style.css"--->
+		<link rel="stylesheet" type="text/css" href="classes_style.css">
+		<meta charset="UTF-8"/>
+		<!---TODO: add navbar, link to "navbar.js"--->
+		<script src="./js/tutors.js"></script>
+		<script src="./js/tutorScript.js"></script>
+	</head>
 
 
 <body style="padding: 20px;" onload="loadtutors()">
@@ -13,10 +16,10 @@
 	<tr>
 	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
 	<th style="text-align: right;">	<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">•••</button>
+<button id="drop-button" onclick="myFunction()" class="dropbtn">•••</button>
   <div id="myDropdown" class="dropdown-content">
             <a href="./setting.html">Change setting</a>
-            <a href="./change_child.html">Different Student</a>
+            <a href="./index.html">Different Student</a>
             <a href="./help.html">Help</a>
             <a href="logout.html">Log out</a>
   </div>
@@ -60,7 +63,10 @@
 	<h1><center id='name'></center></h1> 
 
   	<h1>time for tomorrow:</h1>
-
+<!---TODO: replace values with military time (hours 0-23, no am/pm); text should stay the same--->
+<!---TODO: write function in tutorScript.js to generate these options. Function should take three
+	parameters: first time, last time, interval in minutes (i.e. firstTime = "8:00", lastTime = "18:00",
+	interval = 15). Name function "createOptions".--->
 <select name="time" id="time">
 <option value="5:00 AM">5:00 AM</option>
 <option value="5:15 AM">5:15 AM</option>
@@ -164,7 +170,7 @@
 </div>
 
 <div id="cel" style="display:none;">
-	<h1 id="conf">Your appointment has been sechdualed</h1>
+	<h1 id="conf">Your appointment has been scheduled!</h1>
 	<button class="appt_btn" onclick="reset()">Cancel</button>
 </div>
 
@@ -173,63 +179,5 @@
 </div>
 	
 </body>
-
-
-<script>
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-console.log(tutors);
-
-var block = '<div class="row">\n';
-var infoblock = '<div class="info row_block">\n';
-var btn_block = '<div class="btn_block">\n';
-
-function loadtutors(){
-	var node = document.getElementsByClassName('container')[0];
-	var html = '';
-	for(var i in tutors){
-		var div = document.createElement('div');
-  		
-		var tutor = tutors[i];
-		var name = tutor['name'];
-		var age = tutor['age'];
-		var rate = tutor['rating'];
-		var subject = tutor['subject'];
-		var pic = tutor['pic'];
-
-		html += block + '<img class="row_block" '+ 'src="./'+pic+'">'+'\n';
-		html = html + infoblock + 'name:  '+name+'<br>\n';
-		html = html + 'age:  '+age + '<br>\n' + 'rating:  '+rate+'<br>\n';
-		html = html + 'subject:  '+subject+'<br>\n';
-		html = html + '</div>\n' + btn_block + '<button class="appt_btn" onclick="';
-		html = html + 'appoint(\'' + name + '\')">make<br>appointment</button>\n';
-		html = html + '</div>\n</div>\n';
-	}
-	console.log(html);
-	div.innerHTML = html;
-
-	while(div.children.length > 0){
-		node.appendChild(div.children[0]);
-	}
-
-
-}
-</script>
 <script type="text/javascript" src="./js/tutors.js"></script>
 </html>

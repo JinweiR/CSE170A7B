@@ -1,3 +1,7 @@
+/**
+ * General stylesheet for all pages. Style settings for individual pages should be put in
+ * separate stylesheets, added below style.css link in html head.
+ */
 body {
 	min-width: 375px;
 	min-height: 100%;
@@ -48,6 +52,9 @@ p {
 	top: 0;
 	display: block;
 	background-color: #FFFFFF;
+}
+.link {
+	cursor: pointer;
 }
 #head-table {
 	table-layout: fixed;
