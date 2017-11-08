@@ -223,6 +223,22 @@ div.submit-button {
 	border-radius: 8px;
 	cursor: pointer;
 }
+textarea {
+	resize: none;
+	width: 90%;
+	height: 200px;
+	font-size: 48px;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	text-indent: 10px;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+}
+p.alerter {
+	font-size: 36px;
+	color: #FF0000;
+	font-weight: 600;
+	display: none;
+}
 footer {
 	bottom: 0px;
 	height: 10px;

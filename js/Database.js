@@ -113,7 +113,7 @@ var assignmentsRef = {
 var responses0 = [
 	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
 	'after he comes back. \nRegards, Schaffer.'},
-	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
 	'he does better on the next assignment. \n-Rodriguez'}
 ];
 var responses1 = [
@@ -125,7 +125,7 @@ var responses1 = [
 var responses2 = [
 	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
 	'after he comes back. \nRegards, Schaffer.'},
-	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
 	'he does better on the next assignment. \n-Rodriguez'}
 ];
 var responses3 = [
