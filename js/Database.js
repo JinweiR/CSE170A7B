@@ -9,6 +9,16 @@ function applyValues(parentDiv, className) {
 		$(children[i]).attr('value',i);
 	}//end for loop i
 };
+
+/*stores basic data for the parent's account*/
+var accountData = {
+	'username': 'Lauren',
+	'email': 'lauren@example.com',
+	'phone': '(555) 555-5555',
+	'password': 'P@ssw0rd555',
+	'hint': 'Really obvious'
+};
+
 //contains student first name, last name, and index number
 //index begins at zero
 var data = [
@@ -117,21 +127,21 @@ var responses0 = [
 	'he does better on the next assignment. \n-Rodriguez'}
 ];
 var responses1 = [
-	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
-	'he does better on the next assignment. \n-Johnson'},
-	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
+	'she does better on the next assignment. \n-Johnson'},
+	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
 	'after he comes back. \nRegards, Miyamoto.'}
 ];
 var responses2 = [
-	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class ' +
 	'after he comes back. \nRegards, Schaffer.'},
 	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
 	'he does better on the next assignment. \n-Rodriguez'}
 ];
 var responses3 = [
-	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
-	'he does better on the next assignment. \n-Johnson'},
-	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
+	'she does better on the next assignment. \n-Johnson'},
+	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
 	'after he comes back. \nRegards, Miyamoto.'}
 ];
 var responsesRef = {

@@ -1,14 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Login in</title>
-</head>
-
-<body>
-
-<h1>settings</h1>
-	
-</body>
-
+	<head>
+		<title>Settings || Gradetime</title>
+		<meta id="pageId" value="settings"/>
+		<meta lang="en"/>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/link.js"></script>
+		<script src="./js/handlebars-v4.0.11.js"></script>
+		<script src="./js/Database.js"></script>
+		<script src="./js/settingScript.js"></script>
+		<script src="./js/navbar.js"></script>
+	</head>
+	<body>
+		<!--------------fixed navbar on top: REPLACE [PAGE NAME HERE]----------->
+		<div id="navbar">
+			<table id="head-table">
+				<tr>
+					<td id="td-left">
+						<a href="./features.html">Home</a>
+					</td>
+					<td id="td-mid">
+						<div>
+							Change Settings
+						</div>
+					</td>
+					<td id="td-right">
+						<div id="settings" class="dropdown">
+							<div class="selector">
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./index.html">Different Student</div>
+								<div class="drop-option link" href="./login.html">Logout</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="shadow"></div>
+		</div>
+		<div id="main">
+			<h2>Settings</h2>
+			<p id="username">Current Username: </p>
+			<input id="newName" type="text" placeholder="New Username"/>
+			<p id="email">Current Email Address: </p>
+			<input id="newEmail" type="email" placeholder="New Email"/>
+			<p id="phone">Current Phone Number: </p>
+			<input id="newPhone" type="tel" placeholder="New Phone Number"/>
+			<p id="password">Change Password:</p>
+			<input id="newPassword" type="password" placeholder="New Password"/>
+			<input id="confirmPassword" type="password" placeholder="Confirm Password"/>
+			<p id="hint">Password Hint: </p>
+			<input id="newHint" type="text" placeholder="New Hint"/><br/>
+			<p id="change-alert-p" class="alerter">Your new settings have been saved</p>
+			<div id="submit" class="submit-button">Submit</div>
+		</div>
+		<footer>
+			<hr/>
+		</footer>
+	</body>
 </html>
