@@ -208,7 +208,20 @@ input.solo-input {
 	font-size: 88px;
 	border: none;
 	border-bottom: 4px #999999 solid;
+	border-radius: 0px;
 	margin-bottom: 40px;
+}
+div.submit-button {
+	margin: auto;
+	text-align: center;
+	font-size: 68px;
+	font-weight: 600;
+	height: 80px;
+	width: 300px;
+	background-color: #666666;
+	color: #FFFFFF;
+	border-radius: 8px;
+	cursor: pointer;
 }
 footer {
 	bottom: 0px;

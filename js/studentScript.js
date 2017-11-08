@@ -32,17 +32,13 @@
  * @param string on: key value on which to merge Hashmaps
  * @return Hashmap with merged data
  */
-function joinMaps(subject, source, on) {
-	var output = {};//Hashmap to return
-	var keys = subject.keys();
-	var values = subject.values();
-	for (var i = 0; i < keys.length; i++) {
-		if (keys[i] == on) output[keys[i]] = source[values[i]];
-		else output[keys[i]] = values[i];
+function applyValues(parentDiv, className) {
+	var parent = $(parentDiv);
+	var children = parent.find(className);
+	for (var i = 0; i < children.length; i++) {
+		$(children[i]).attr('value',i);
 	}//end for loop i
-	return output;
 };
-
 //contains student first name, last name, and index number
 //index begins at zero
 var data = [
@@ -145,7 +141,37 @@ var assignmentsRef = {
 	'2': assignments2,
 	'3': assignments3,
 };
-
+/*Responses to questions by parent*/
+var responses0 = [
+	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	'after he comes back. \nRegards, Schaffer.'},
+	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	'he does better on the next assignment. \n-Rodriguez'}
+];
+var responses1 = [
+	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	'he does better on the next assignment. \n-Johnson'},
+	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	'after he comes back. \nRegards, Miyamoto.'}
+];
+var responses2 = [
+	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	'after he comes back. \nRegards, Schaffer.'},
+	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	'he does better on the next assignment. \n-Rodriguez'}
+];
+var responses3 = [
+	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope' +
+	'he does better on the next assignment. \n-Johnson'},
+	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
+	'after he comes back. \nRegards, Miyamoto.'}
+];
+var responsesRef = {
+	'0': responses0,
+	'1': responses1,
+	'2': responses2,
+	'3': responses3
+};
 //scripts for each page
 var index_script = function() {
 		//initialize page according to data
@@ -235,7 +261,40 @@ var conference_script = function() {
 			var currHtml = template(data);
 			destination.append(currHtml);
 		}//end for loop j
+		
+		destination = $('#teacher-response-div');
+		currData = responsesRef[currStudent];
+		
+		source = $('#template-3').html();
+		template = Handlebars.compile(source);
+		
+		for (var k = 0; k < currData.length; k++) {
+			var currResp = currData[k];
+			var currHtml = template(currResp);
+			destination.append(currHtml);
+		}//end for loop k
+		
+		/*Apply value to each teacher response, update localStorage based on value*/
+		applyValues('#teacher-response-div','.response-msg');
+		$(document).on('click','.response-msg',function() {
+			var val = $(this).attr('value');
+			//alert("Val: " + val);//---tester
+			localStorage.setItem('curr-response',val);
+		});
 	};//end var conference_script
+var response_script = function() {
+	var currData = responsesRef[localStorage.getItem('curr-student')];
+	var ref = parseInt(localStorage.getItem('curr-response'),10);
+	//alert("Ref: " + ref);//---tester
+	var currResponse = currData[ref];
+	
+	$('#message-name').text("RE: " + currResponse['subject']);
+	var currClass = classes[currResponse['class']];
+	var teacherName = currClass['teacher'];
+	var className = currClass['name'];
+	$('#teacher-name').text("From: " + teacherName + ", " + className);
+	$('#message').text(currResponse['msg']);
+};//end var response_script
 var grade_script = function() {
 	var currIndex = localStorage.getItem('curr-student');
 	var currStudent = ref[currIndex];
@@ -291,6 +350,7 @@ var assignments_script = function() {
 		}
 	}//end for loop i
 };
+
 //this is the code that will execute when the page is loaded
 var main = function() {
 	/*choose which script to execute, based on the page*/
@@ -312,6 +372,9 @@ var main = function() {
 			break;
 		case 'assignments':
 			$(document).ready(assignments_script);
+			break;
+		case 'response':
+			$(document).ready(response_script);
 			break;
 	}//end switch
 };//end var main

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Gradetime</title>
+		<title>Message || Gradetime</title>
+		<meta id="pageId" value="response"/>
 		<meta lang="en"/>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/link.js"></script>
+		<script src="./js/handlebars-v4.0.11.js"></script>
+		<script src="./js/Database.js"></script>
+		<script src="./js/responseScript.js"></script>
 		<script src="./js/navbar.js"></script>
 	</head>
 	<body>
@@ -13,32 +18,17 @@
 			<table id="head-table">
 				<tr>
 					<td id="td-left">
-						<a href="./features.html">Home</a>
+						<a href="./conference.html">Back</a>
 					</td>
 					<td id="td-mid">
-						<p id="select-header">Select Different Page</p>
-						<div id="main-menu" class="dropdown">
-							<div id="main-select" class="selector">
-								<p class="select-txt">RE: appointment</p>
-								<img class="select-icon" src="./images-icons/select-arrows.png"/>
-							</div>
-							<div class="drop-menu">
-								<div class="drop-option">
-									Message 1
-								</div>
-								<div class="drop-option">
-									Message 2
-								</div>
-								<div class="drop-option">
-									Message 3
-								</div>
-							</div>
+						<div>
+							Teacher's Message
 						</div>
 					</td>
 					<td id="td-right">
 						<div id="settings" class="dropdown">
 							<div class="selector">
-								<img src="./images-icons/Settings Dots.png"/>
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
 							</div>
 							<div class="drop-menu">
 								<div class="drop-option">Change Settings</div>
@@ -52,7 +42,9 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			Teacher's message goes here
+			<h2 id="message-name">RE:</h2>
+			<h2 id="teacher-name">From:</h2>
+			<p id="message"></p>
 		</div>
 		<footer>
 			<hr/>

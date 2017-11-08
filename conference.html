@@ -8,9 +8,10 @@
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 		<link rel="stylesheet" type="text/css" href="./css/conferenceStyle.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/Database.js"></script>
+		<script src="./js/conferenceSetup.js"></script>
 		<script src="./js/link.js"></script>
 		<script src="./js/handlebars-v4.0.11.js"></script>
-		<script src="./js/studentScript.js"></script>
 		<script src="./js/navbar.js"></script>
 		<script src="./js/conferenceScript.js"></script>
 	</head>
@@ -114,17 +115,17 @@
 				</div>
 			</form>
 			<hr/>
-			<h3>Teacher Responses:</h3>
-			<a href="./teacherMessage.html">
-				<div class="response-msg">
-					<p>RE: Regrading homework 2</p>
-				</div>
-			</a>
-			<a href="./teacherMessage.html">
-				<div class="response-msg">
-					<p>RE: Doctor's appointment tomorrow</p>
-				</div>
-			</a>
+			<div id="teacher-response-div">
+				<h3>Teacher Responses:</h3>
+				<!------Third Handlebars Template----->
+				<script id="template-3" type="text/x-handlebars-template">
+					<a href="./teacherMessage.html">
+						<div class="response-msg" value="0">
+							<p>RE: {{subject}}</p>
+						</div>
+					</a>
+				</script>
+			</div>
 		</div>
 		<footer>
 			<hr/>
