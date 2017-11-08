@@ -33,6 +33,13 @@ var main = function() {
 		updateInfo();
 		loadInfo();
 		$('#change-alert-p').css('display','inline');
+		/*Reset input text boxes to empty*/
+		$('#newName').val('');
+		$('#newEmail').val('');
+		$('#newPhone').val('');
+		$('#newPassword').val('');
+		$('#confirmPassword').val('');
+		$('#newHint').val('');
 	});
 };
 
