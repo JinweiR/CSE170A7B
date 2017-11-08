@@ -1,14 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="classes_style.css">
 <meta charset="UTF-8">
-<title>Login in</title>
+<script src="./js/tutors.js"></script>
+<title>Grade Report</title>
 </head>
 
-<body>
 
-<h1>find tutor</h1>
+<body style="padding: 20px;" onload="loadtutors()">
+<table>
+	<tr>
+	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
+	<th style="text-align: right;">	<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">•••</button>
+  <div id="myDropdown" class="dropdown-content">
+            <a href="./setting.html">Change setting</a>
+            <a href="./change_child.html">Different Student</a>
+            <a href="logout.html">Log out</a>
+  </div>
+</div></th>
+
+</table>
+
+<br>
+<center>
+<fieldset >
+<div style="border:1px black;width:100%;">
+ <select onChange="window.location.href=this.value" name=countries style="width:100%;">
+ <option selected="selected"><center>Julian</center></option>
+  <option value="./emily-features.html"><center>Emily</center></option>
+  <option value="./edward-features.html"><center>edward</center></option>
+
+ </select>
+ </div>
+</fieldset>
+</center>
+
+<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
+
+<div class="center" style="font-size: 4em;font-family: Helvetica;">
+	 Find A Tutor
+</div><br>
+
+<div class="container">
+
+
+
+</div>
+
+<div id="pop" class="modal" >
+<span class="close">&times;</span>
+<div class="centerBox" style="background-color:white;height:auto;overflow:auto;">
+
+<div id="msg">
+
+	<h1>you are making appointment with</h1>
+	<h1><center id='name'></center></h1> 
+
+  	<h1>time for tomorrow:</h1>
+
+<select name="time" id="time">
+<option value="5:00 AM">5:00 AM</option>
+<option value="5:15 AM">5:15 AM</option>
+<option value="5:30 AM">5:30 AM</option>
+<option value="5:45 AM">5:45 AM</option>
+ 
+<option value="6:00 AM">6:00 AM</option>
+<option value="6:15 AM">6:15 AM</option>
+<option value="6:30 AM">6:30 AM</option>
+<option value="6:45 AM">6:45 AM</option>
+ 
+<option value="7:00 AM">7:00 AM</option>
+<option value="7:15 AM">7:15 AM</option>
+<option value="7:30 AM">7:30 AM</option>
+<option value="7:45 AM">7:45 AM</option>
+ 
+<option value="8:00 AM">8:00 AM</option>
+<option value="8:15 AM">8:15 AM</option>
+<option value="8:30 AM">8:30 AM</option>
+<option value="8:45 AM">8:45 AM</option>
+ 
+<option value="9:00 AM">9:00 AM</option>
+<option value="9:15 AM">9:15 AM</option>
+<option value="9:30 AM">9:30 AM</option>
+<option value="9:45 AM">9:45 AM</option>
+ 
+<option value="10:00 AM">10:00 AM</option>
+<option value="10:15 AM">10:15 AM</option>
+<option value="10:30 AM">10:30 AM</option>
+<option value="10:45 AM">10:45 AM</option>
+ 
+<option value="11:00 AM">11:00 AM</option>
+<option value="11:15 AM">11:15 AM</option>
+<option value="11:30 AM">11:30 AM</option>
+<option value="11:45 AM">11:45 AM</option>
+ 
+<option value="12:00 PM">12:00 PM</option>
+<option value="12:15 PM">12:15 PM</option>
+<option value="12:30 PM">12:30 PM</option>
+<option value="12:45 PM">12:45 PM</option>
+ 
+<option value="1:00 PM">1:00 PM</option>
+<option value="1:15 PM">1:15 PM</option>
+<option value="1:30 PM">1:30 PM</option>
+<option value="1:45 PM">1:45 PM</option>
+ 
+<option value="2:00 PM">2:00 PM</option>
+<option value="2:15 PM">2:15 PM</option>
+<option value="2:30 PM">2:30 PM</option>
+<option value="2:45 PM">2:45 PM</option>
+ 
+<option value="3:00 PM">3:00 PM</option>
+<option value="3:15 PM">3:15 PM</option>
+<option value="3:30 PM">3:30 PM</option>
+<option value="3:45 PM">3:45 PM</option>
+ 
+<option value="4:00 PM">4:00 PM</option>
+<option value="4:15 PM">4:15 PM</option>
+<option value="4:30 PM">4:30 PM</option>
+<option value="4:45 PM">4:45 PM</option>
+ 
+<option value="5:00 PM">5:00 PM</option>
+<option value="5:15 PM">5:15 PM</option>
+<option value="5:30 PM">5:30 PM</option>
+<option value="5:45 PM">5:45 PM</option>
+ 
+<option value="6:00 PM">6:00 PM</option>
+<option value="6:15 PM">6:15 PM</option>
+<option value="6:30 PM">6:30 PM</option>
+<option value="6:45 PM">6:45 PM</option>
+ 
+<option value="7:00 PM">7:00 PM</option>
+<option value="7:15 PM">7:15 PM</option>
+<option value="7:30 PM">7:30 PM</option>
+<option value="7:45 PM">7:45 PM</option>
+ 
+<option value="8:00 PM">8:00 PM</option>
+<option value="8:15 PM">8:15 PM</option>
+<option value="8:30 PM">8:30 PM</option>
+<option value="8:45 PM">8:45 PM</option>
+ 
+<option value="9:00 PM">9:00 PM</option>
+<option value="9:15 PM">9:15 PM</option>
+<option value="9:30 PM">9:30 PM</option>
+<option value="9:45 PM">9:45 PM</option>
+ 
+<option value="10:00 PM">10:00 PM</option>
+<option value="10:15 PM">10:15 PM</option>
+<option value="10:30 PM">10:30 PM</option>
+<option value="10:45 PM">10:45 PM</option>
+ 
+<option value="11:00 PM">11:00 PM</option>
+<option value="11:15 PM">11:15 PM</option>
+<option value="11:30 PM">11:30 PM</option>
+<option value="11:45 PM">11:45 PM</option>
+</select>
+
+<h1>contact: </h1> <input type="number" name="contact">
+<button class="appt_btn" onclick="confirm()">Confirm</button>
+<button class="appt_btn" onclick="cancel()">Cancel</button>
+</div>
+
+<div id="cel" style="display:none;">
+	<h1 id="conf">Your appointment has been sechdualed</h1>
+	<button class="appt_btn" onclick="reset()">Cancel</button>
+</div>
+
+</div>
+
+</div>
 	
 </body>
 
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+console.log(tutors);
+
+var block = '<div class="row">\n';
+var infoblock = '<div class="info row_block">\n';
+var btn_block = '<div class="btn_block">\n';
+
+function loadtutors(){
+	var node = document.getElementsByClassName('container')[0];
+	var html = '';
+	for(var i in tutors){
+		var div = document.createElement('div');
+  		
+		var tutor = tutors[i];
+		var name = tutor['name'];
+		var age = tutor['age'];
+		var rate = tutor['rating'];
+		var subject = tutor['subject'];
+		var pic = tutor['pic'];
+
+		html += block + '<img class="row_block" '+ 'src="./'+pic+'">'+'\n';
+		html = html + infoblock + 'name:  '+name+'<br>\n';
+		html = html + 'age:  '+age + '<br>\n' + 'rating:  '+rate+'<br>\n';
+		html = html + 'subject:  '+subject+'<br>\n';
+		html = html + '</div>\n' + btn_block + '<button class="appt_btn" onclick="';
+		html = html + 'appoint(\'' + name + '\')">make<br>appointment</button>\n';
+		html = html + '</div>\n</div>\n';
+	}
+	console.log(html);
+	div.innerHTML = html;
+
+	while(div.children.length > 0){
+		node.appendChild(div.children[0]);
+	}
+
+
+}
+</script>
+<script type="text/javascript" src="./js/tutors.js"></script>
 </html>
