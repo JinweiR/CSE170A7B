@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Message || Gradetime</title>
-		<meta id="pageId" value="response"/>
+		<title>Help || Gradetime</title>
+		<meta id="pageId" value="help"/>
 		<meta lang="en"/>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
@@ -10,19 +10,20 @@
 		<script src="./js/link.js"></script>
 		<script src="./js/handlebars-v4.0.11.js"></script>
 		<script src="./js/Database.js"></script>
-		<script src="./js/responseScript.js"></script>
+		<script src="./js/helpScript.js"></script>
 		<script src="./js/navbar.js"></script>
 	</head>
 	<body>
+		<!--------------fixed navbar on top: REPLACE [PAGE NAME HERE]----------->
 		<div id="navbar">
 			<table id="head-table">
 				<tr>
 					<td id="td-left">
-						<a href="./conference.html">Back</a>
+						<a href="./features.html">Home</a>
 					</td>
 					<td id="td-mid">
 						<div>
-							Teacher's Message
+							Help
 						</div>
 					</td>
 					<td id="td-right">
@@ -42,16 +43,10 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			<h2 id="message-name">RE:</h2>
-			<h2 id="teacher-name">From:</h2>
-			<p id="message"></p>
-			<hr/>
-			<div id="reply-div">
-				<h2>Reply:</h2>
-				<p id="response-recorded-p" class="alerter">Your response has been recorded!</p>
-				<textarea id="reply-textarea" name="reply" rows="15" wrap="soft" placeholder="Type your reply here"></textarea>
-				<div id="submit" class="submit-button">Submit</div>
-			</div>
+			<p>Having trouble using Gradetime? Report the problem here and we'll get back to you.</p>
+			<textarea id="problem-textarea" name="reply" rows="15" wrap="soft" placeholder="Type your problem here"></textarea>
+			<p id="submit-alert-p" class="alerter">Your question has been submitted!</p>
+			<div id="submit" class="submit-button">Submit</div>
 		</div>
 		<footer>
 			<hr/>
