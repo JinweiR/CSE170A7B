@@ -1,4 +1,13 @@
 var main = function() {
+	/*If not first visit to page, redirects links*/
+	var redirect = localStorage.getItem('saved-page');
+	$(document).on('click','.next-link', function() {
+		//alert(redirect);//---tester
+		if (redirect != './index.html') {
+			$('.next-link').attr('href', redirect);
+		}
+	});
+	
 	//initialize page according to data
 	var source = $('#student-template').html();
 	var template = Handlebars.compile(source);
@@ -18,4 +27,4 @@ var main = function() {
 	});
 };//end main function
 
-$(document).ready(main);
+window.onload = main;//execute main function

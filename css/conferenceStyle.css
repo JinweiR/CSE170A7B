@@ -110,10 +110,11 @@ div.dropped {
 div.dropdown-option {
 	text-align: center;
 	padding: 5px;
-	height: 68px;
+	height: 88px;
 	overflow: hidden;
 	border: none;
 	border-bottom: 1px #999999 solid;
+	padding-top: 20px;
 }
 div.dropdown-option:hover {
 	cursor: pointer;
@@ -122,17 +123,17 @@ div.dropdown-option:hover {
 #select {
 	min-width: 200px;
 	padding: 5px;
-	height: 68px;
+	height: 78px;
 	margin: auto;
 	text-align: center;
 	background-color: #FFFFFF;
 	border: 1px #999999 solid;
 	border-radius: 8px;
-	font-size: 32px;
+	font-size: 42px;
 	font-weight: 300;
 	overflow: hidden;
 	p {
-		font-size: 36px;
+		font-size: 42px;
 	}
 }
 #select:hover {

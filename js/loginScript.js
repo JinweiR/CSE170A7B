@@ -1,6 +1,7 @@
 var main = function() {
 	$('body').hide();
 	$('body').fadeIn(500);
+	localStorage.setItem('saved-page','./index.html');
 	
 	var homepage = "./index.html";
 	var alertA = 'Please enter your username or email address';

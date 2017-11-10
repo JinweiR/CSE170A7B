@@ -10,13 +10,16 @@ var main = function() {
 	var source = $('#template-1').html();
 	var template = Handlebars.compile(source);
 	var assignmentList = assignmentsRef[currStudent];
+	var redirect = true;
 	for (var i = 0; i < assignmentList.length; i++) {
 		var currAssgn = assignmentList[i];
 		if (currAssgn['class'] == currIndex) {
 			var currHtml = template(currAssgn);
 			destination.append(currHtml);
+			redirect = false;
 		}
 	}//end for loop i
-};
+	if (redirect) window.location = './grade.html';
+};//end main function
 
 $(document).ready(main);

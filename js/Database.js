@@ -32,7 +32,7 @@ var data = [
 //fields: class, date, msg, status(good/bad)
 //stored as a hashmap so data can be referenced using 'curr-student'
 var feedback = {
-	'0' : [{'class': 'SPAN_4', 'status': 'good', 'date': '11-3-2017', 'msg': 'Great job on the skit!'},
+	'0' : [{'class': 'Spanish', 'status': 'good', 'date': '11-3-2017', 'msg': 'Great job on the skit!'},
 		{'class': 'Calculus', 'status': 'bad', 'date': '10-31-2017', 'msg': 'Not spooky enough 4me'},
 		{'class': 'Biology', 'status': 'bad', 'date': '10-27-2017', 'msg': 'Don\'t play with bunsen burners.'},
 		{'class': 'Spanish', 'status': 'good', 'date': '', 'msg': 'Muy bien!'}
@@ -73,7 +73,7 @@ var classList = {
 	'3' : ['ENG_LIT','CHEM_HON','TRIG','HIST']
 };
 
-//allows you to retrieve data using the item 'curr-student'
+//allows you to retrieve data using the item 'curr-student' in localStorage
 var ref = {
 	'0' : data[0],
 	'1' : data[1],
@@ -113,6 +113,7 @@ var assignments3 = [
 	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96'},
 	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94'}
 ];
+/*Maps 'curr-student' to array of their assignments*/
 var assignmentsRef = {
 	'0': assignments0,
 	'1': assignments1,
@@ -128,9 +129,9 @@ var responses0 = [
 ];
 var responses1 = [
 	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'she does better on the next assignment. \n-Johnson'},
+	'she does better on the next assignment. \n-Park'},
 	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
-	'after he comes back. \nRegards, Miyamoto.'}
+	'after she comes back. \nRegards, Miyamoto.'}
 ];
 var responses2 = [
 	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class ' +
@@ -140,13 +141,24 @@ var responses2 = [
 ];
 var responses3 = [
 	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'she does better on the next assignment. \n-Johnson'},
+	'she does better on the next assignment. \n-Park'},
 	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
 	'after he comes back. \nRegards, Miyamoto.'}
 ];
+/*Maps 'curr-student' to array of teacher responses'*/
 var responsesRef = {
 	'0': responses0,
 	'1': responses1,
 	'2': responses2,
 	'3': responses3
 };
+
+/*Records current page, unless page is Settings, Help, or Different Students*/
+function setSavedPage() {
+	var pageRef = $('#pageId').attr('value');
+	//if not one of special pages
+	if (pageRef != 'help' && pageRef != 'settings' && pageRef != 'students' && pageRef != 'response')
+		localStorage.setItem('saved-page', window.location);
+}//end function setSavedPage
+
+window.onload = setSavedPage();//saves url to redirect back

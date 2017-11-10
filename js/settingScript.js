@@ -27,6 +27,8 @@ function loadInfo() {
 var main = function() {
 	/*Initialize page using Database.js*/
 	loadInfo();
+	var redirect = localStorage.getItem('saved-page');
+	$('#back-link').attr('href', redirect);
 	
 	/*Update info*/
 	$(document).on('click','#submit',function() {

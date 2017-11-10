@@ -15,6 +15,7 @@ var main = function() {
 	/*Record responses (no actual functionality right now)*/
 	$(document).on('click','#submit',function() {
 		$('#response-recorded-p').css('display','inline');
+		document.getElementById('reply-textarea').value = '';
 	});
 };//end var main
 
