@@ -86,6 +86,7 @@ var assignments0 = [
 	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82'},
 	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92'},
 	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94'},
+	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78'},
 	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87'},
 	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88'}
 ];
