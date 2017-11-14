@@ -2,182 +2,109 @@
 <html>
 	<head>
 		<title>Find Tutor || Gradetime</title>
-		<!---TODO: put stylesheet in "css" folder, make consistent with "style.css"--->
-		<link rel="stylesheet" type="text/css" href="classes_style.css">
+		<meta id="pageId" value="tutor"/>
 		<meta charset="UTF-8"/>
-		<!---TODO: add navbar, link to "navbar.js"--->
+		<meta lang="en"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/classes_style.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./js/link.js"></script>
+		<script src="./js/handlebars-v4.0.11.js"></script>
+		<script src="./js/Database.js"></script>
+		<script src="./js/navbar.js"></script>
 		<script src="./js/tutors.js"></script>
 		<script src="./js/tutorScript.js"></script>
 	</head>
+	<body style="padding: 20px">
+		<div id="navbar">
+			<table id="head-table">
+				<tr>
+					<td id="td-left">
+						<a href="./features.html">Home</a>
+					</td>
+					<td id="td-mid">
+						<p id="select-header">Different Page</p>
+						<div id="main-menu" class="dropdown">
+							<div id="main-select" class="selector">
+								<p class="select-txt">Find Tutor</p>
+								<img class="select-icon" src="./images-icons/select-arrows.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="conference.html">
+									Conference Center
+								</div>
+								<div class="drop-option link" href="grade.html">
+									Grades
+								</div>
+							</div>
+						</div>
+					</td>
+					<td id="td-right">
+						<div id="settings" class="dropdown">
+							<div class="selector">
+								<img id="settings-icon" src="./images-icons/Settings Dots.png"/>
+							</div>
+							<div class="drop-menu">
+								<div class="drop-option link" href="./setting.html">Change Settings</div>
+								<div class="drop-option link" href="./index.html">Different Student</div>
+								<div class="drop-option link" href="./help.html">Help</div>
+								<div class="drop-option link" href="./login.html">Logout</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="shadow"></div>
+		</div>
+		<div id="main">
+			<h1>Find a Tutor</h1>
+			<div id="tutor-div" class="container">
+				<table id="tutor-table">
+					<!---list of tutors goes here--->
+				</table>
+				<script id="template-1" type="text/x-handlebars-template">
+					<tr>
+						<td class="tutor">
+							<img class="profile-pic" src="{{pic}}"/>
+						</td>
+						<td class="tutor">
+							<p class="detail-text">Name: {{name}}</p>
+							<p class="detail-text">Age: {{age}}</p>
+							<p class="detail-text">Subject: {{subject}}</p>
+							<p class="detail-text">Rating: {{rating}}/5</p>
+						</td>
+						<td class="tutor">
+							<button class="appt_btn" onclick="appoint('{{name}}');">Make<br>Appointment</button>
+						</td>
+					</tr>
+				</script>
+			</div>
+			<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
+				<br/>
 
+				<div id="pop" class="modal" >
+					<span class="close">&times;</span>
+				<div class="centerBox" style="background-color:white;height:auto;overflow:auto;">
 
-<body style="padding: 20px;" onload="loadtutors()">
-<table>
-	<tr>
-	<th style="text-align: left;" id="home"><a href="index.html">< Home</a></th>
-	<th style="text-align: right;">	<div class="dropdown">
-<button id="drop-button" onclick="myFunction()" class="dropbtn">•••</button>
-  <div id="myDropdown" class="dropdown-content">
-            <a href="./setting.html">Change setting</a>
-            <a href="./index.html">Different Student</a>
-            <a href="./help.html">Help</a>
-            <a href="logout.html">Log out</a>
-  </div>
-</div></th>
+					<div id="msg">
+						<p>You are making an appointment with</p>
+						<p id="name"</p> 
+  						<h3>Time for tomorrow:</h3>
+						<select name="time" id="time">
+							<!---options inserted here by tutorScript.js--->
+						</select>
+						<button class="appt_btn" onclick="confirm()">Confirm</button>
+						<button class="appt_btn" onclick="cancel()">Cancel</button>
+					</div>
 
-</table>
-
-<br>
-<center>
-<fieldset >
-<div style="border:1px black;width:100%;">
- <select onChange="window.location.href=this.value" name=countries style="width:100%;">
- <option selected="selected"><center>Julian</center></option>
-  <option value="./emily-features.html"><center>Emily</center></option>
-  <option value="./edward-features.html"><center>edward</center></option>
-
- </select>
- </div>
-</fieldset>
-</center>
-
-<div style="margin-top: 70px; margin-left: 40px; margin-right: 40px;">
-
-<div class="center" style="font-size: 4em;font-family: Helvetica;">
-	 Find A Tutor
-</div><br>
-
-<div class="container">
-
-
-
-</div>
-
-<div id="pop" class="modal" >
-<span class="close">&times;</span>
-<div class="centerBox" style="background-color:white;height:auto;overflow:auto;">
-
-<div id="msg">
-
-	<h1>you are making appointment with</h1>
-	<h1><center id='name'></center></h1> 
-
-  	<h1>time for tomorrow:</h1>
-<!---TODO: replace values with military time (hours 0-23, no am/pm); text should stay the same--->
-<!---TODO: write function in tutorScript.js to generate these options. Function should take three
-	parameters: first time, last time, interval in minutes (i.e. firstTime = "8:00", lastTime = "18:00",
-	interval = 15). Name function "createOptions".--->
-<select name="time" id="time">
-<option value="5:00 AM">5:00 AM</option>
-<option value="5:15 AM">5:15 AM</option>
-<option value="5:30 AM">5:30 AM</option>
-<option value="5:45 AM">5:45 AM</option>
- 
-<option value="6:00 AM">6:00 AM</option>
-<option value="6:15 AM">6:15 AM</option>
-<option value="6:30 AM">6:30 AM</option>
-<option value="6:45 AM">6:45 AM</option>
- 
-<option value="7:00 AM">7:00 AM</option>
-<option value="7:15 AM">7:15 AM</option>
-<option value="7:30 AM">7:30 AM</option>
-<option value="7:45 AM">7:45 AM</option>
- 
-<option value="8:00 AM">8:00 AM</option>
-<option value="8:15 AM">8:15 AM</option>
-<option value="8:30 AM">8:30 AM</option>
-<option value="8:45 AM">8:45 AM</option>
- 
-<option value="9:00 AM">9:00 AM</option>
-<option value="9:15 AM">9:15 AM</option>
-<option value="9:30 AM">9:30 AM</option>
-<option value="9:45 AM">9:45 AM</option>
- 
-<option value="10:00 AM">10:00 AM</option>
-<option value="10:15 AM">10:15 AM</option>
-<option value="10:30 AM">10:30 AM</option>
-<option value="10:45 AM">10:45 AM</option>
- 
-<option value="11:00 AM">11:00 AM</option>
-<option value="11:15 AM">11:15 AM</option>
-<option value="11:30 AM">11:30 AM</option>
-<option value="11:45 AM">11:45 AM</option>
- 
-<option value="12:00 PM">12:00 PM</option>
-<option value="12:15 PM">12:15 PM</option>
-<option value="12:30 PM">12:30 PM</option>
-<option value="12:45 PM">12:45 PM</option>
- 
-<option value="1:00 PM">1:00 PM</option>
-<option value="1:15 PM">1:15 PM</option>
-<option value="1:30 PM">1:30 PM</option>
-<option value="1:45 PM">1:45 PM</option>
- 
-<option value="2:00 PM">2:00 PM</option>
-<option value="2:15 PM">2:15 PM</option>
-<option value="2:30 PM">2:30 PM</option>
-<option value="2:45 PM">2:45 PM</option>
- 
-<option value="3:00 PM">3:00 PM</option>
-<option value="3:15 PM">3:15 PM</option>
-<option value="3:30 PM">3:30 PM</option>
-<option value="3:45 PM">3:45 PM</option>
- 
-<option value="4:00 PM">4:00 PM</option>
-<option value="4:15 PM">4:15 PM</option>
-<option value="4:30 PM">4:30 PM</option>
-<option value="4:45 PM">4:45 PM</option>
- 
-<option value="5:00 PM">5:00 PM</option>
-<option value="5:15 PM">5:15 PM</option>
-<option value="5:30 PM">5:30 PM</option>
-<option value="5:45 PM">5:45 PM</option>
- 
-<option value="6:00 PM">6:00 PM</option>
-<option value="6:15 PM">6:15 PM</option>
-<option value="6:30 PM">6:30 PM</option>
-<option value="6:45 PM">6:45 PM</option>
- 
-<option value="7:00 PM">7:00 PM</option>
-<option value="7:15 PM">7:15 PM</option>
-<option value="7:30 PM">7:30 PM</option>
-<option value="7:45 PM">7:45 PM</option>
- 
-<option value="8:00 PM">8:00 PM</option>
-<option value="8:15 PM">8:15 PM</option>
-<option value="8:30 PM">8:30 PM</option>
-<option value="8:45 PM">8:45 PM</option>
- 
-<option value="9:00 PM">9:00 PM</option>
-<option value="9:15 PM">9:15 PM</option>
-<option value="9:30 PM">9:30 PM</option>
-<option value="9:45 PM">9:45 PM</option>
- 
-<option value="10:00 PM">10:00 PM</option>
-<option value="10:15 PM">10:15 PM</option>
-<option value="10:30 PM">10:30 PM</option>
-<option value="10:45 PM">10:45 PM</option>
- 
-<option value="11:00 PM">11:00 PM</option>
-<option value="11:15 PM">11:15 PM</option>
-<option value="11:30 PM">11:30 PM</option>
-<option value="11:45 PM">11:45 PM</option>
-</select>
-
-<h1>contact: </h1> <input type="number" name="contact">
-<button class="appt_btn" onclick="confirm()">Confirm</button>
-<button class="appt_btn" onclick="cancel()">Cancel</button>
-</div>
-
-<div id="cel" style="display:none;">
-	<h1 id="conf">Your appointment has been scheduled!</h1>
-	<button class="appt_btn" onclick="reset()">Cancel</button>
-</div>
-
-</div>
-
-</div>
-	
-</body>
+					<div id="cel" style="display:none;">
+						<h1 id="conf">Your appointment has been scheduled!</h1>
+						<button class="appt_btn" onclick="reset()">Okay</button>
+						<button class="appt_btn" onclick="reset()">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 <script type="text/javascript" src="./js/tutors.js"></script>
 </html>
