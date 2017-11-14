@@ -13,9 +13,10 @@ select {
 
 /*drop down menue and content*/
 .dropbtn {
-    padding: 16px;
     font-size: 1em;
     cursor: pointer;
+    text-align: center;
+    padding: 8px;
 }
 
 
@@ -120,6 +121,8 @@ tr:nth-child(even) {
         height:200px;
         width:200px;
         border-radius: 50%;
+        text-align: center;
+        margin: auto;
 
     }
 
