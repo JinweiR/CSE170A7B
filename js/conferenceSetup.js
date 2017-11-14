@@ -36,7 +36,7 @@ var main = function() {
 		}//end for loop j
 		
 		var options = document.getElementById('teacher-select').getElementsByTagName('option');
-		for (var m = 0; m < options.length; m++) {
+		for (var m = 0; m < options.length && m < currData.length; m++) {
 			options[m + 1].value = currData[m];
 		}
 		

@@ -300,6 +300,8 @@ select {
 	min-width: 200px;
 	font-size: 58px;
 	font-weight: 400;
+	border: 1px #999999 solid;
+	border-radius: 8px;
 }
 option {
 	text-align: center;
