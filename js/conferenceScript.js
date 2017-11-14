@@ -90,14 +90,7 @@ var main = function () {
 		$('#see-more-button').text('See More');
 		$('#feedback-posts').removeClass('show-more');
 	}
-	/* REDUNDANT
-	$(document).on('click','#see-more-button',function() {
-		if ($('#feedback-posts').hasClass('show-more')) {
-			showLess();
-		}
-		else showMore();
-	});
-	*/
+	
 	//slideUp from wherever
 	$(document).on('click','body',function() {
 		if (dropped) {
@@ -135,6 +128,8 @@ var main = function () {
 	
 	//submit button redirect
 	$(document).on('click','#submit',function() {
+		var currClass = document.getElementById('teacher-select').value;
+		localStorage.setItem('curr-class',currClass);
 		window.location = "./question-submitted.html";
 		return false;
 	});

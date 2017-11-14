@@ -22,7 +22,7 @@ var main = function() {
 		}//end for loop i
 		
 		//fill in teachers and classes dropdown menu
-		destination = $('#dropdown-content');
+		destination = $('#teacher-select');
 		currData = classList[currStudent];
 		
 		source = $('#template-2').html();
@@ -34,6 +34,11 @@ var main = function() {
 			var currHtml = template(data);
 			destination.append(currHtml);
 		}//end for loop j
+		
+		var options = document.getElementById('teacher-select').getElementsByTagName('option');
+		for (var m = 0; m < options.length; m++) {
+			options[m + 1].value = currData[m];
+		}
 		
 		destination = $('#teacher-response-div');
 		currData = responsesRef[currStudent];

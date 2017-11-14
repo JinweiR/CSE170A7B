@@ -76,19 +76,14 @@
 			<hr/>
 			<form id="main-form">
 				<p class="advising_1">Ask a question to:</p>
-				<input id="category" name="category" value="none"/>
-				<div class="dropdown-categories">
-					<div id="select" name="category">
-						<p class="select-txt">Select Teacher</p>
-						<img class="select-icon" src="./images-icons/select-arrows.png"/>
-					</div>
-					<!-----------Template 2 goes here--------------->
-					<script id="template-2" type="text/x-handlebars-template">
-						 <div class="dropdown-option">{{teacher}} || {{name}}</div>
-					</script>
-					<div id="dropdown-content" class="dropdown-content">
-						<!------------classes and teachers go here------------->
-					</div>
+				<div id="teacher-select-div">
+					<select id="teacher-select" name="teacher" placeholder="Select a Teacher">
+						<option selected disabled>Select a Teacher</option>
+						<!---Teacher options go here--->
+						<script id="template-2" type="text/x-handlebars-template">
+							 <option class="dropdown-option" value="{{teacher}}:{{name}}">{{teacher}} || {{name}}</option>
+						</script>
+					</select>
 				</div>
 				<div id="subject-div">
 					<input id="subject" name="subject" type="text" placeholder="Subject"/>
@@ -124,6 +119,10 @@
 					</a>
 				</script>
 			</div>
+		</div>
+		<div class="popup hidden">
+			<div class="popup-overlay"></div>
+			<div class="popup-content">This is a popup</div>
 		</div>
 		<footer>
 			<hr/>

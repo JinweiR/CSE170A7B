@@ -251,3 +251,56 @@ footer {
 	bottom: 0px;
 	height: 10px;
 }
+div.popup {
+	z-index: 2;
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+div.popup-overlay {
+	z-index: 2;
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #666666;
+	opacity: 0.6;
+	
+}
+div.popup-content {
+	z-index: 3;
+	display: block;
+	position: relative;
+	top: 30%;
+	min-width: 400px;
+	max-width: 650px;
+	min-height: 200px;
+	background-color: #FFFFFF;
+	opacity: 1.0;
+	margin: auto;
+	font-size: 36px;
+	text-align: center;
+	padding: 10px;
+}
+.hidden {
+	display: none;
+}
+div.hidden {
+	display: none;
+}
+select {
+	width: 40%
+	min-width: 200px;
+	font-size: 58px;
+	font-weight: 400;
+}
+option {
+	text-align: center;
+}
