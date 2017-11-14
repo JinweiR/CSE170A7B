@@ -150,8 +150,8 @@ img.select-icon {
 	margin-bottom: 0px;
 	width: 100%;
 	height: 5px;
-	margin-left: -10px;
-	margin-right: -10px;
+	margin-left: -20px;
+	margin-right: -20px;
 	background-color: #333333;
 	background: -webkit-linear-gradient(#666666, #FFFFFF);
 }
