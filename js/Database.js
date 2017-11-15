@@ -82,38 +82,37 @@ var ref = {
 };
 
 var assignments0 = [
-	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140'},
-	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60'},
-	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60'},
-	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100'},
-	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78', 'weight': '60'},
-	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120'},
-	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120'}
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140', 'pdf': './GradePDF/JulianSpaskit1.pdf'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60', 'pdf': './GradePDF/JulianSpaQuiz1.pdf'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60', 'pdf': './GradePDF/JulianCalReview.pdf'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100', 'pdf': './GradePDF/JulianCalHW1.pdf'},
+	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78', 'weight': '60', 'pdf': './GradePDF/JulianCalPop .pdf'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120', 'pdf': './GradePDF/JulianBioLab1.pdf'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120', 'pdf': './GradePDF/JulianBioLab2.pdf'}
 ];
 var assignments1 = [
-	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140'},
-	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120'},
-	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80'},
-	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140'},
-	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140'},
-	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140'}
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140', 'pdf': './GradePDF/EmilyLitEssay1.pdf'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120', 'pdf': './GradePDF/EmilyChemLab1.pdf'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80', 'pdf': './GradePDF/EmilyTriQuiz.pdf'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140', 'pdf': './GradePDF/EmilyPresentation.pdf'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140', 'pdf': './GradePDF/EmilyChemLabReport.pdf'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140', 'pdf': './GradePDF/EmilyLitEssay2.pdf'}
 ];
 var assignments2 = [
-	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140'},
-	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60'},
-	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60'},
-	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100'},
-	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78', 'weight': '60'},
-	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120'},
-	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120'}
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140', 'pdf': './GradePDF/EdwardSpaskit1.pdf'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60', 'pdf': './GradePDF/EdwardSpaQuiz1.pdf'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60', 'pdf': './GradePDF/EdwardCalReview.pdf'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100', 'pdf': './GradePDF/EdwardCalHW1.pdf'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120', 'pdf': './GradePDF/EdwardBioLab1.pdf'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120', 'pdf': './GradePDF/EdwardBioLab2.pdf'}
 ];
 var assignments3 = [
-	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140'},
-	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120'},
-	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80'},
-	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140'},
-	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140'},
-	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140'}
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140', 'pdf': './GradePDF/AliceLitEssay1.pdf'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120', 'pdf': './GradePDF/AliceChemLab1.pdf'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80', 'pdf': './GradePDF/AliceTriQuiz.pdf'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140', 'pdf': './GradePDF/AlicePresentation.pdf'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140', 'pdf': './GradePDF/AliceChemLabReport.pdf'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140', 'pdf': './GradePDF/AliceLitEssay2.pdf'}
 ];
 /*Maps 'curr-student' to array of their assignments*/
 var assignmentsRef = {

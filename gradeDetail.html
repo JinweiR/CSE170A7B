@@ -67,7 +67,7 @@
 				<!--------Template 1 goes here------------->
 				<script id="template-1" type="text/x-handlebars-template">
 					<tr>
- 						<td class="link" href="https://www.superteacherworksheets.com/teachingtools/stgradebook_WNQZF.pdf">{{name}}</td>
+ 						<td><a href="{{pdf}}">{{name}}</a></td>
  						<td>{{grade}}%</td>
 					</tr>
 				</script>
@@ -75,29 +75,6 @@
 		</div>
 	</div>
 </body>
-
-
-
-<script>
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 </html>
 
 
