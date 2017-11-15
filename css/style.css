@@ -297,7 +297,7 @@ div.hidden {
 }
 select {
 	width: 40%;
-	min-width: 200px;
+	min-width: 550px;
 	font-size: 58px;
 	font-weight: 400;
 	border: 1px #999999 solid;

@@ -56,13 +56,13 @@ var feedback = {
 
 //hashmap of class codes to class names and teacher names
 var classes = {
-	'CALC_AP' : {'name':'AP Calculus', 'teacher':'Schaffer'},
-	'SPAN_4' : {'name':'Spanish IV', 'teacher':'Rodriguez'},
-	'BIO_HON' : {'name':'Honors Biology', 'teacher':'Lynne'},
-	'CHEM_HON' : {'name':'Honors Chemistry', 'teacher':'Wu'},
-	'ENG_LIT' : {'name':'English Literature', 'teacher':'Park'},
-	'HIST' : {'name':'History', 'teacher':'Johnson'},
-	'TRIG' : {'name':'Trigonometry', 'teacher':'Miyamoto'}
+	'CALC_AP' : {'name':'AP Calculus', 'teacher':'Schaffer', 'average': '88'},
+	'SPAN_4' : {'name':'Spanish IV', 'teacher':'Rodriguez', 'average': '86'},
+	'BIO_HON' : {'name':'Honors Biology', 'teacher':'Lynne', 'average': '92'},
+	'CHEM_HON' : {'name':'Honors Chemistry', 'teacher':'Wu', 'average': '89'},
+	'ENG_LIT' : {'name':'English Literature', 'teacher':'Park', 'average': '87'},
+	'HIST' : {'name':'History', 'teacher':'Johnson', 'average': '84'},
+	'TRIG' : {'name':'Trigonometry', 'teacher':'Miyamoto', 'average': '85'}
 };
 
 //hashmap of students by index to an array of their classes
@@ -82,37 +82,38 @@ var ref = {
 };
 
 var assignments0 = [
-	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88'},
-	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82'},
-	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92'},
-	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94'},
-	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78'},
-	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87'},
-	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88'}
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100'},
+	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78', 'weight': '60'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120'}
 ];
 var assignments1 = [
-	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91'},
-	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86'},
-	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88'},
-	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92'},
-	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96'},
-	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94'}
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140'}
 ];
 var assignments2 = [
-	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88'},
-	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82'},
-	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92'},
-	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94'},
-	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87'},
-	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88'}
+	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100'},
+	{'class': 'CALC_AP', 'name': 'Pop Quiz 1', 'grade': '78', 'weight': '60'},
+	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120'},
+	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120'}
 ];
 var assignments3 = [
-	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91'},
-	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86'},
-	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88'},
-	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92'},
-	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96'},
-	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94'}
+	{'class': 'ENG_LIT', 'name': 'Essay 1', 'grade': '91', 'weight': '140'},
+	{'class': 'CHEM_HON', 'name': 'Lab 1', 'grade': '86', 'weight': '120'},
+	{'class': 'TRIG', 'name': 'Pop Quiz', 'grade': '88', 'weight': '80'},
+	{'class': 'HIST', 'name': 'Presentation 1', 'grade': '92', 'weight': '140'},
+	{'class': 'CHEM_HON', 'name': 'Lab Report 1', 'grade': '96', 'weight': '140'},
+	{'class': 'ENG_LIT', 'name': 'Essay 2', 'grade': '94', 'weight': '140'}
 ];
 /*Maps 'curr-student' to array of their assignments*/
 var assignmentsRef = {
@@ -153,6 +154,8 @@ var responsesRef = {
 	'2': responses2,
 	'3': responses3
 };
+
+var defaultThreshold = 80;//for grade alerts
 
 /*Records current page, unless page is Settings, Help, or Different Students*/
 function setSavedPage() {

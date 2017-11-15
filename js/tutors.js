@@ -14,17 +14,17 @@ var tutors = {0:{'name':'Andrew Wu',
 				'age':'18',
 				'rating':'4.5',
 				'pic':'https://pbs.twimg.com/media/CynmmdYWgAAjky1.jpg',
-				'subject':'AP Physics'},
+				'subject':'Trigonometry'},
 			3:{'name':'Jim Beam',
 				'age':'18',
 				'rating':'4.5',
 				'pic':'https://thumb1.shutterstock.com/display_pic_with_logo/238468/141327337/stock-photo-happy-man-giving-okay-sign-portrait-on-white-background-141327337.jpg',
-				'subject':'AP Physics'},
-			4:{'name':'Gary Johnson',
+				'subject':'English Literature'},
+			4:{'name':'Jessica Ortega',
 				'age':'18',
 				'rating':'4.5',
-				'pic':'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Gary_Johnson_campaign_portrait.jpg/1200px-Gary_Johnson_campaign_portrait.jpg',
-				'subject':'Math'}
+				'pic':'https://s3.amazonaws.com/ellevate-app-uploads-production/events/3302/event_image/original/35.jpg?1401729399',
+				'subject':'Spanish'}
 
 			};
 
