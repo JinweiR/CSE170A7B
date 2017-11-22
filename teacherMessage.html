@@ -6,6 +6,7 @@
 		<meta lang="en"/>
 		<meta charset="UTF-8"/>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/responseStyle.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="./js/link.js"></script>
 		<script src="./js/handlebars-v4.0.11.js"></script>
@@ -43,9 +44,25 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			<h2 id="message-name">RE:</h2>
-			<h2 id="teacher-name">From:</h2>
-			<p id="message"></p>
+			<div id="main-message-div">
+				<h2 id="message-name">RE:</h2>
+				<h2 id="teacher-name">From:</h2>
+				<h2 id="date">Date: </h2>
+				<p id="message"></p>
+			</div>
+			<hr/>
+			<h2>Replies:</h2>
+			<div id="reply-list">
+				<!---template for new replies--->
+				<script id="template-1" type="text/x-handlebars-template">
+					<div class="past-reply">
+						<h2 class="reply-header">RE: {{subject}}</h2>
+						<h2 class="reply-sender">From: {{sender}}</h2>
+						<h2 class="reply-date">{{date}}</h2>
+						<p class="reply-text">{{content}}</p>
+					</div>
+				</script>
+			</div>
 			<hr/>
 			<div id="reply-div">
 				<h2>Reply:</h2>

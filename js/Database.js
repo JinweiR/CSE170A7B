@@ -124,27 +124,27 @@ var assignmentsRef = {
 /*Responses to questions by parent*/
 var responses0 = [
 	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class' +
-	'after he comes back. \nRegards, Schaffer.'},
+	'after he comes back. \nRegards, Schaffer.', 'date': 'Mon Nov 6 2017'},
 	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'he does better on the next assignment. \n-Rodriguez'}
+	'he does better on the next assignment. \n-Rodriguez', 'date': 'Mon Nov 6 2017'}
 ];
 var responses1 = [
 	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'she does better on the next assignment. \n-Park'},
+	'she does better on the next assignment. \n-Park', 'date': 'Mon Nov 6 2017'},
 	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
-	'after she comes back. \nRegards, Miyamoto.'}
+	'after she comes back. \nRegards, Miyamoto.', 'date': 'Mon Nov 6 2017'}
 ];
 var responses2 = [
 	{'class': 'CALC_AP','subject': 'Sick Day','msg': 'It will be just fine. He can take the quiz on the first day of class ' +
-	'after he comes back. \nRegards, Schaffer.'},
+	'after he comes back. \nRegards, Schaffer.', 'date': 'Mon Nov 6 2017'},
 	{'class': 'SPAN_4','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'he does better on the next assignment. \n-Rodriguez'}
+	'he does better on the next assignment. \n-Rodriguez', 'date': 'Mon Nov 6 2017'}
 ];
 var responses3 = [
 	{'class': 'ENG_LIT','subject': 'Regrading Homework 1','msg': 'I\'m sorry, the deadline for regrading has passed. I hope ' +
-	'she does better on the next assignment. \n-Park'},
+	'she does better on the next assignment. \n-Park', 'date': 'Mon Nov 6 2017'},
 	{'class': 'TRIG','subject': 'Sick Day','msg': 'It will be just fine. She can take the quiz on the first day of class ' +
-	'after he comes back. \nRegards, Miyamoto.'}
+	'after he comes back. \nRegards, Miyamoto.', 'date': 'Mon Nov 6 2017'}
 ];
 /*Maps 'curr-student' to array of teacher responses'*/
 var responsesRef = {
