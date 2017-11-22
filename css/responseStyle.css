@@ -1,0 +1,18 @@
+div.past-reply {
+	margin-left: 20px;
+	background-color: #DDDDDD;
+}
+
+h2.reply-header, h2.reply-date, h2.reply-sender {
+	font-size: 36px;
+	text-align: left;
+	margin-bottom: 0px;
+}
+
+p.reply-text {
+	font-weight: 200;
+}
+
+#reply-list {
+	min-height: 80px;
+}
