@@ -14,7 +14,7 @@ var main = function() {
 	var password = accountData['password'];
 	var valid = false;
 	
-	$(document).on('submit','#entries',function() {
+	$(document).on('click','#login',function() {
 		var getName = $('#username').val();
 		var getPass = $('#pass').val();
 		if (getName == '') {
@@ -39,4 +39,4 @@ var main = function() {
 	});
 };
 
-$(document).ready(main);
+window.onload = main;

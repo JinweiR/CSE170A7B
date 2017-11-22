@@ -1,6 +1,7 @@
 div.past-reply {
 	margin-left: 20px;
 	background-color: #DDDDDD;
+	border-radius: 8px;
 }
 
 h2.reply-header, h2.reply-date, h2.reply-sender {

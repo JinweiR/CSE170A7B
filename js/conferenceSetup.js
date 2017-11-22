@@ -1,3 +1,13 @@
+var itemRef = "unanswered-" + localStorage.getItem('curr-student');
+
+function loadUnanswered() {
+	//function appendList(item, templateSource, destination, reverse)
+	try {
+		appendList(itemRef, 'template-5', 'message-div', false);
+		applyValues('#message-div', 'div.response-msg');
+	} catch(err) {console.log("Failed to load data from " + itemRef)}
+}//end function loadUnanswered
+
 var main = function() {
 	//initialize student name
 		var currStudent = localStorage.getItem('curr-student');
@@ -59,6 +69,9 @@ var main = function() {
 			//alert("Val: " + val);//---tester
 			localStorage.setItem('curr-response',val);
 		});
+		
+		//append unanswered messages
+		loadUnanswered();
 };//end main function
 
-$(document).ready(main);
+window.onload = main;

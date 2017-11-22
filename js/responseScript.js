@@ -1,6 +1,8 @@
-var currData = responsesRef[localStorage.getItem('curr-student')];
+var currStudent = localStorage.getItem('curr-student');
+var currData = responsesRef[currStudent];
 var ref = parseInt(localStorage.getItem('curr-response'),10);
 var currResponse = currData[ref];
+var replyItem = "replies-" + currStudent + "-" + ref;//for localStorage
 
 /*Initialize page using handlebars*/
 function initialize() {
@@ -12,6 +14,11 @@ function initialize() {
 	$('#teacher-name').text("From: " + teacherName + ", " + className);//fill in teacher's name, class
 	$('#message').text(currResponse['msg']);//insert message text
 	document.getElementById('date').innerHTML += date;
+	
+	/*Get replies*/
+	try {
+		appendList(replyItem, 'template-1', 'reply-list', true);//could cause errors
+	} catch(err) {console.log("Failed to get data from " + replyItem)}
 	
 	/*Record responses (no actual functionality right now)*/
 	var submitButton = document.getElementById('submit');
@@ -34,12 +41,14 @@ function recordReply() {
 		'date': date,
 		'content': content
 	};
-	
 	var source = document.getElementById('template-1').innerHTML;
 	var template = Handlebars.compile(source);
 	var newReply = template(info);
 	var target = document.getElementById('reply-list').innerHTML;
 	document.getElementById('reply-list').innerHTML = newReply + target;
+	
+	/*Push information to localStorage*/
+	pushToItem(replyItem, info);
 	
 	/*Notify user that reply has been made*/
 	$('#response-recorded-p').css('display','inline');

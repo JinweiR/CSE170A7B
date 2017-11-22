@@ -1,3 +1,21 @@
+function pushMessage() {
+	var itemRef = "unanswered-" + localStorage.getItem('curr-student');
+	var header = document.getElementById('subject').value;//message header
+	var classRef = document.getElementById('teacher-select').value;//teacher's name
+	var currClass = classes[classRef];
+	var teacher = currClass['teacher'];
+	var d = new Date();
+	var date = d.toDateString();//date at sending
+	var content = document.getElementById('problem').value;//content of the message
+	var newItem = {
+		'header': header,
+		'teacher': teacher,
+		'date': date,
+		'content': content
+	};
+	pushToItem(itemRef, newItem);
+}//end function pushMessage
+
 /**
  * displays all feedback posts (<div class="feedback-post">). Changes all posts'
  * style to "display: block"
@@ -128,6 +146,7 @@ var main = function () {
 	
 	//submit button redirect
 	$(document).on('click','#submit',function() {
+		pushMessage();//adds message to localStorage
 		var currClass = document.getElementById('teacher-select').value;
 		localStorage.setItem('curr-class',currClass);
 		window.location = "./question-submitted.html";

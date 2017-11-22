@@ -2,11 +2,65 @@
  * "database" containing hashmaps and arrays of students, classes, feedback, messages, etc.
  */
 
+/**
+ * Takes a Hashmap stored in localStorage and adds the information to a chosen element
+ * using a Handlebars template.
+ * @param item The localStorage item to get
+ * @param templateSource ID of the script element holding the handlebars template
+ * @param destination ID of the destination element
+ * @param reverse boolean indicating whether or not to add items in reverse order
+ * @return none
+ */
+function appendList(item, templateSource, destination, reverse) {
+	var info = JSON.parse(localStorage.getItem(item));
+	console.log("Info: " + localStorage.getItem(item));
+	var source = document.getElementById(templateSource).innerHTML;
+	var template = Handlebars.compile(source);
+	var target = document.getElementById(destination);
+	console.log("Getting keys...");
+	var keys = Object.keys(info);
+	for (var i = 0; i < keys.length; i++) {
+		var currInfo = info[keys[i]];
+		var currHTML = template(info[i]);
+		if (reverse) target.innerHTML = currHTML + target.innerHTML;
+		else target.innerHTML += currHTML;
+		console.log("Element appended from " + item);
+	}//end foreach i
+}//end function appendList
+
+/**
+ * Adds a new object to a Hashmap held in localStorage
+ * @param item Name of the item held in localStorage
+ * @param object New object to append to the item at the last key (key values
+ * 	assumed to be Strings of numbers)
+ * @return none
+ */
+function pushToItem(item, object) {
+	try {
+		var text = localStorage.getItem(item);
+		var info = JSON.parse(text);
+		if(info == null || info == '') {
+			info = {};
+			console.log("Creating new item " + item);
+		}
+		var infoLength = Object.keys(info).length;
+		info[infoLength + ""] = object;
+		var storage = JSON.stringify(info);
+		console.log("New item: " + storage);
+		localStorage.setItem(item, storage);
+		console.log("Object pushed to " + item);
+	} catch(err) {
+		var newObj = {'0': object};
+		var storage = JSON.stringify(newObj);
+		localStorage.setItem(item, storage);
+	}
+}//end function pushItem
+
 function applyValues(parentDiv, className) {
 	var parent = $(parentDiv);
 	var children = parent.find(className);
 	for (var i = 0; i < children.length; i++) {
-		$(children[i]).attr('value',i);
+		$(children[i]).attr('value', i);
 	}//end for loop i
 };
 

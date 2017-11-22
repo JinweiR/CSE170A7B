@@ -130,10 +130,18 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			<button id="show_fb_btn" onclick="showFeedback(0)"></button>
-			<button style="margin-left:360px;" id="show_unread_btn" onclick="showFeedback(1)">
-				show unreaded messages
-			</button>
+			<table>
+				<tr>
+					<td>
+						<button id="show_fb_btn" class="top-button" onclick="showFeedback(0)"></button>
+					</td>
+					<td>
+						<button style="margin-left:360px;" id="show_unread_btn" class="top-button" onclick="showFeedback(1)">
+							Show Unread Messages
+						</button>
+					</td>
+				</tr>
+			</table>
 
 			<div id="pop" class="modal">
 				<div id="feedback" style="background-color:white;height:auto;overflow:auto;">
@@ -189,6 +197,17 @@
 					<div id="submit">Submit</div>
 				</div>
 			</form>
+			<div id="message-div">
+				<h3>Unanswered Messages:</h3>
+				<!--Fourth Handlebars Template-->
+ 				<script id="template-5" type="text/x-handlebars-template">
+					<a href="unanswered-msg.html">
+						<div class="response-msg new-msg" value="0">
+							<p>{{header}}</p>
+						</div>
+					</a>
+				</script>
+			</div>
 			<!-- <hr/> -->
 			<div id="pop" class="modal">
 				<div id="feedback" style="background-color:white;height:auto;overflow:auto;">
@@ -205,10 +224,20 @@
 					</div>
 		    	</div>
 		    </div>
-		</div>
-		<div class="popup hidden">
-			<div class="popup-overlay"></div>
-			<div class="popup-content">This is a popup</div>
+		    <div id="pop2" class="modal">
+				<div id="unanswered-backer" style="background-color:white;height:auto;overflow:auto;">
+					<div id="popup-unanswered">
+						<script id="template-6" type="text/x-handlebars-template">
+							<div class="past-reply">
+								<h2 class="reply-header">{{header}}</h2>
+								<h2 class="reply-sender">To: {{teacher}}</h2>
+								<h2 class="reply-date">{{date}}</h2>
+								<p class="reply-text">{{content}}</p>
+							</div>
+						</script>
+					</div>
+		    	</div>
+		    </div>
 		</div>
 		<footer>
 			<hr/>
@@ -230,14 +259,14 @@
 		//show num of feed back in button
 		var num_fb = feedback[curstudent].length;
 		var num_fb = num_fb + "";
-		var btnvalue = 'Click to show feedback' + '(' + num_fb + ')'; 
+		var btnvalue = 'Feedback' + '(' + num_fb + ')'; 
 		
 		var btn = document.getElementById('show_fb_btn');
 		btn.innerText = btnvalue;
 
 		//show num of unreaded teachers feedback(bottom part before) in button
 		var num_unread = responsesRef[curstudent].length;
-		var btnText = 'Click to show un-readed message' + '(' + num_unread + ')';
+		var btnText = 'Teacher Responses' + '(' + num_unread + ')';
 		var btn2 = document.getElementById('show_unread_btn');
 		btn2.innerText = btnText;
 
