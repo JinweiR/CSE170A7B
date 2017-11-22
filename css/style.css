@@ -306,3 +306,6 @@ select {
 option {
 	text-align: center;
 }
+#settings-txt {
+	font-size: 48px;
+}
