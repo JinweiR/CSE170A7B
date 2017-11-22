@@ -100,9 +100,9 @@ var assignments1 = [
 ];
 var assignments2 = [
 	{'class': 'SPAN_4', 'name': 'Skit 1', 'grade': '88', 'weight': '140', 'pdf': './GradePDF/EdwardSpaskit1.pdf'},
-	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60', 'pdf': './GradePDF/EdwardSpaQuiz1.pdf'},
-	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60', 'pdf': './GradePDF/EdwardCalReview.pdf'},
-	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100', 'pdf': './GradePDF/EdwardCalHW1.pdf'},
+	{'class': 'SPAN_4', 'name': 'Quiz 1', 'grade': '82', 'weight': '60', 'pdf': './GradePDF/EdwardSpaQuizq.pdf'},
+	{'class': 'CALC_AP', 'name': 'Review Quiz 1', 'grade': '92', 'weight': '60', 'pdf': './GradePDF/EdwardCalQuiz.pdf'},
+	{'class': 'CALC_AP', 'name': 'Homework 1', 'grade': '94', 'weight': '100', 'pdf': './GradePDF/EdwardCalHomework1.pdf'},
 	{'class': 'BIO_HON', 'name': 'Lab 1', 'grade': '87', 'weight': '120', 'pdf': './GradePDF/EdwardBioLab1.pdf'},
 	{'class': 'BIO_HON', 'name': 'Lab 2', 'grade': '88', 'weight': '120', 'pdf': './GradePDF/EdwardBioLab2.pdf'}
 ];
