@@ -15,6 +15,79 @@
 		<script src="./js/navbar.js"></script>
 		<script src="./js/conferenceScript.js"></script>
 	</head>
+<style>
+	.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.centerBox {
+    position:relative;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 20px;
+    margin-top:30px;
+    
+    
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .action{
+        float:left;
+        cursor: pointer;
+        border-radius: 15px;
+        font-size: 16px;
+    }
+    .remove{
+        background-color:red;
+        border:none;
+        color:white;
+    }
+    .modify{
+        background-color:white;
+        color:black;
+        border-color:black;
+    }
+    .action:hover {
+        background-color: gray;
+    }
+
+    .action:active {
+        background-color: light gray;
+        transform: translateY(4px);
+    }
+</style>
 	<body>
 		<div id="navbar">
 			<table id="head-table">
@@ -57,29 +130,38 @@
 			<div id="shadow"></div>
 		</div>
 		<div id="main">
-			<div id="feedback">
-				<h3 id="feedback-header">Latest feedback on </h3>
-				<!------------template starts here------------>
-				<script id="template-1" type="text/x-handlebars-template">
+			<button id="show_fb_btn" onclick="showFeedback(0)"></button>
+			<button style="margin-left:360px;" id="show_unread_btn" onclick="showFeedback(1)">
+				show unreaded messages
+			</button>
+
+			<div id="pop" class="modal">
+				<div id="feedback" style="background-color:white;height:auto;overflow:auto;">
+					<h3 id="feedback-header">Latest feedback on </h3>
+					<!---template starts here-->
+					<script id="template-1" type="text/x-handlebars-template">
 					<div class="feedback-post" value="0">
 						<div class="status {{status}}-status"></div>
-						<p class="feedback-post">{{class}}: {{msg}}</p>
+							<p class="feedback-post">{{class}}: {{msg}}</p>
+						</div>
+					</script>
+					<div id="feedback-posts">
+					<!---feedback posts go here-->
 					</div>
-				</script>
-				<div id="feedback-posts">
-					<!------------feedback posts go here-------------->
+				</div>
+
+				<div class="see-more">
+					<p id="see-more-button">See More</p>
 				</div>
 			</div>
-			<div class="see-more">
-				<p id="see-more-button">See More</p>
-			</div>
+
 			<hr/>
 			<form id="main-form">
 				<p class="advising_1">Ask a question to:</p>
 				<div id="teacher-select-div">
 					<select id="teacher-select" name="teacher" placeholder="Select a Teacher">
 						<option selected disabled>Select a Teacher</option>
-						<!---Teacher options go here--->
+						<!---Teacher options go here-->
 						<script id="template-2" type="text/x-handlebars-template">
 							 <option class="dropdown-option" value="{{teacher}}:{{name}}">{{teacher}} || {{name}}</option>
 						</script>
@@ -107,18 +189,22 @@
 					<div id="submit">Submit</div>
 				</div>
 			</form>
-			<hr/>
-			<div id="teacher-response-div">
-				<h3>Teacher Responses:</h3>
-				<!------Third Handlebars Template----->
-				<script id="template-3" type="text/x-handlebars-template">
-					<a href="./teacherMessage.html">
-						<div class="response-msg" value="0">
-							<p>RE: {{subject}}</p>
-						</div>
-					</a>
-				</script>
-			</div>
+			<!-- <hr/> -->
+			<div id="pop" class="modal">
+				<div id="feedback" style="background-color:white;height:auto;overflow:auto;">
+					<div id="teacher-response-div">
+						<h3>Teacher Responses:</h3>
+ 						<!--Third Handlebars Template-->
+ 						<script id="template-3" type="text/x-handlebars-template">
+							<a href="./teacherMessage.html">
+								<div class="response-msg" value="0">
+									<p>RE: {{subject}}</p>
+								</div>
+							</a>
+						</script>
+					</div>
+		    	</div>
+		    </div>
 		</div>
 		<div class="popup hidden">
 			<div class="popup-overlay"></div>
@@ -128,4 +214,37 @@
 			<hr/>
 		</footer>
 	</body>
+
+	<script type="text/javascript">
+		var curstudent = localStorage.getItem('curr-student');
+
+		function showFeedback(i){
+			var modal = document.getElementsByClassName('modal')[i];
+			modal.style.display = "block";
+			
+			window.onclick = function(event) {
+				if (event.target == modal) modal.style.display = "none";
+			}
+
+		}
+		//show num of feed back in button
+		var num_fb = feedback[curstudent].length;
+		var num_fb = num_fb + "";
+		var btnvalue = 'Click to show feedback' + '(' + num_fb + ')'; 
+		
+		var btn = document.getElementById('show_fb_btn');
+		btn.innerText = btnvalue;
+
+		//show num of unreaded teachers feedback(bottom part before) in button
+		var num_unread = responsesRef[curstudent].length;
+		var btnText = 'Click to show un-readed message' + '(' + num_unread + ')';
+		var btn2 = document.getElementById('show_unread_btn');
+		btn2.innerText = btnText;
+
+
+
+
+
+
+	</script>
 </html>
