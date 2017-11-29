@@ -15,6 +15,7 @@ var main = function() {
 	var valid = false;
 	
 	$(document).on('click','#login',function() {
+		gaLogin();
 		var getName = $('#username').val();
 		var getPass = $('#pass').val();
 		if (getName == '') {
