@@ -57,6 +57,12 @@ var main = function () {
 		hide_feedback(3);
 	});
 	
+	/*For GA*/
+	var gaTarget = document.getElementById('teacher-response-div');
+	gaTarget.addEventListener('click', function() {
+		gaConference();
+	});
+	
 	$(document).on('click','#see-more-button',function() {
 		if ($('#feedback-posts').hasClass('expanded')) {
 			hide_feedback(3);
