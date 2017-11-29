@@ -58,7 +58,7 @@ var main = function () {
 	});
 	
 	/*For GA*/
-	var gaTarget = document.getElementById('teacher-response-div');
+	var gaTarget = document.getElementById('show_unread_btn');
 	gaTarget.addEventListener('click', function() {
 		gaConference();
 	});
